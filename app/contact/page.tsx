@@ -26,30 +26,30 @@ const contactInfo = [
     icon: MapPin,
     title: "Visit Us",
     details: [
-      "Landmark Near 101 Metro Station",
-      "Sector 78, Noida, Uttar Pradesh",
+      "45 Rockefeller Plaza, Suite 200",
+      "New York, NY 10111",
     ],
     action: {
       label: "Get Directions",
-      href: "https://www.google.com/maps/search/?api=1&query=Landmark%20Near%20101%20Metro%20Station%2C%20Sector%2078%2C%20Noida%2C%20Uttar%20Pradesh",
+      href: "https://www.google.com/maps/search/?api=1&query=45%20Rockefeller%20Plaza%2C%20Suite%20200%2C%20New%20York%2C%20NY%2010111",
     },
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 98765 43210", "+91 98765 43211"],
+    details: ["+1 (212) 555-0199", "+1 (212) 555-0190"],
     action: {
       label: "Call Now",
-      href: "tel:+919876543210",
+      href: "tel:+12125550199",
     },
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@agrawalclinic.com", "appointments@agrawalclinic.com"],
+    details: ["hello@bethanydentalnyc.com", "appointments@bethanydentalnyc.com"],
     action: {
       label: "Send Email",
-      href: "mailto:info@agrawalclinic.com",
+      href: "mailto:hello@bethanydentalnyc.com",
     },
   },
   {
@@ -263,7 +263,7 @@ export default function ContactPage() {
                   <Input
                     id="phone"
                     type="tel"
-                    placeholder="+91 XXXXX XXXXX"
+                    placeholder="+1 (212) XXXXXXX"
                     value={formData.phone}
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
@@ -311,12 +311,12 @@ export default function ContactPage() {
               {/* Embedded Google Map */}
               <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-muted relative shadow-soft">
                 <iframe
-                  title="Agrawal Clinic Location - Sector 78 Noida"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.424430436086!2d77.372!3d28.568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cef3d9b7f0001%3A0x0!2sLandmark%20Near%20101%20Metro%20Station%2C%20Sector%2078%2C%20Noida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000"
+                  title="Bethany Dental Care Location - Rockefeller Plaza NYC"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2599723659223!2d-73.98083838459385!3d40.75895427932688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258ffb4be61a9%3A0xe54e3d37a8b4b1a4!2s45%20Rockefeller%20Plaza%2C%20New%20York%2C%20NY%2010111!5e0!3m2!1sen!2sus!4v1700000000000"
                   className="absolute inset-0 h-full w-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  aria-label="Map showing Landmark Near 101 Metro Station, Sector 78, Noida, Uttar Pradesh"
+                  aria-label="Map showing 45 Rockefeller Plaza, Suite 200, New York, NY 10111"
                 />
               </div>
 
@@ -328,11 +328,11 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-2">
-                      Medical Emergency?
+                      Dental Emergency?
                     </h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      If you&apos;re experiencing a medical emergency, please call
-                      immediately or visit the nearest hospital.
+                      If you&apos;re experiencing a dental emergency, please call
+                      immediately or visit our clinic.
                     </p>
                     <Button
                       asChild
@@ -340,7 +340,7 @@ export default function ContactPage() {
                       size="sm"
                       className="bg-destructive hover:bg-destructive/90"
                     >
-                      <Link href="tel:+919876543210">
+                      <Link href="tel:+12125550199">
                         <Phone className="w-4 h-4 mr-2" />
                         Emergency Line
                       </Link>
@@ -360,7 +360,7 @@ export default function ContactPage() {
                       Chat on WhatsApp
                     </h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Quick queries? Message us on WhatsApp for instant support
+                      Quick queries? Message us on WhatsApp for support
                       during working hours.
                     </p>
                     <Button
@@ -369,7 +369,7 @@ export default function ContactPage() {
                       className="bg-[#25D366] hover:bg-[#25D366]/90 text-white"
                     >
                       <Link
-                        href="https://wa.me/919876543210"
+                        href="https://wa.me/12125550199"
                         target="_blank"
                         rel="noopener noreferrer"
                       >

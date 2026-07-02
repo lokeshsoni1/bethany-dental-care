@@ -24,7 +24,7 @@ export default function CloudinarySlideshowMinimalHero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen bg-[#09090b] pt-40 pb-20 px-6 overflow-hidden">
+    <section className="relative w-full min-h-screen pt-40 pb-20 px-6 overflow-hidden bg-white">
       
       {/* ================================================================================= */}
       {/* 🔥 CLOUDINARY HARDWARE-ACCELERATED SLIDESHOW LOOP FRAME */}
@@ -34,7 +34,7 @@ export default function CloudinarySlideshowMinimalHero() {
           <div
             key={cdnUrl}
             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out transform scale-105 will-change-opacity ${
-              trackingIndex === activeSlideIndex ? "opacity-35" : "opacity-0"
+              trackingIndex === activeSlideIndex ? "opacity-90" : "opacity-0"
             }`}
             style={{ 
               backgroundImage: `url('${cdnUrl}')`,
@@ -43,33 +43,23 @@ export default function CloudinarySlideshowMinimalHero() {
           />
         ))}
         
-        {/* Anti-Glare Protective Filter Overlay Layer: Pure 2.5% Subtle Dark Veil + 3px Minimal Blur */}
+        {/* Anti-Glare Protective Filter Overlay Layer: Subtle dark overlay for text readability */}
         <div 
-          className="absolute inset-0 bg-[#09090b]/25 backdrop-blur-[3px] z-10" 
+          className="absolute inset-0 bg-black/15 backdrop-blur-[2px] z-10" 
           style={{ contain: "layout paint style" }}
         />
       </div>
 
-      {/* ================================================================================= */}
-      {/* ⚠️ CLEANUP INSTRUCTION: STETHOSCOPE, HEART, PULSE VECTOR SVGS ARE COMPLETELY DELETED HERE */}
-      {/* ================================================================================= */}
-
       <div className="max-w-7xl mx-auto w-full relative z-20 flex flex-col justify-center items-start h-full">
         
-        {/* Noida Location Target Badge Tag Block */}
-        <div className="inline-flex items-center space-x-2 bg-cyan-500/10 border border-cyan-500/20 px-4 py-1.5 rounded-full text-xs font-semibold text-cyan-400 mb-8 select-none">
-          <span className="h-1.5 w-1.5 bg-cyan-500 rounded-full animate-pulse" />
-          <span>Noida's Premier Private Clinic</span>
-        </div>
-
         {/* Core Heading Layout Framework */}
         <h1 className="font-sans font-bold text-5xl sm:text-7xl lg:text-8xl text-white tracking-tight leading-[1.05] max-w-4xl mb-6 drop-shadow-md">
-          Excellence in <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-cyan-400">Personalized Healthcare</span>
+          Excellence in <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-100 to-cyan-300">Personalized Healthcare</span>
         </h1>
 
         {/* Context Description Copy Statement */}
-        <p className="font-sans text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed mb-10 font-medium drop-shadow-sm">
-          Experience world-class medical care with Dr. Amit Agrawal. Combining advanced diagnostics with compassionate treatment for families across Noida and Delhi NCR.
+        <p className="font-sans text-base sm:text-lg text-white max-w-2xl leading-relaxed mb-10 font-medium drop-shadow-md">
+          Experience world-class dental care at Bethany Dental Care. Combining advanced diagnostics with compassionate treatment for families across New York City.
         </p>
 
         {/* Dual CTA Button Triggers Node Layout */}
@@ -79,21 +69,17 @@ export default function CloudinarySlideshowMinimalHero() {
             <span>Book Appointment</span>
           </button>
           
-          <button className="flex items-center space-x-2 bg-white/10 backdrop-blur-md border border-white/10 hover:bg-white/20 text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 shadow-sm">
+          <button className="flex items-center space-x-2 bg-white/20 backdrop-blur-md border border-white/20 hover:bg-white/30 text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 shadow-sm">
             <span>Learn About Us</span>
             <ArrowRight className="h-4 w-4"/>
           </button>
         </div>
 
-        {/* ================================================================================= */}
-        {/* ⚠️ CLEANUP INSTRUCTION: FLOATING MOUSE SCROLLING INDICATOR ICON IS COMPLETELY REMOVED */}
-        {/* ================================================================================= */}
-
         {/* Footer Medical Metadata Grid Arrays Row Segment */}
-        <div className="w-full border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 font-sans text-sm text-zinc-400 font-medium">
+        <div className="w-full border-t border-white/20 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 font-sans text-sm text-white font-medium drop-shadow-sm">
           <div className="flex items-center space-x-2">
             <span className="h-2 w-2 rounded-full border border-cyan-400" />
-            <span>MBBS, MD Certified</span>
+            <span>ADA, AACD Certified</span>
           </div>
           <div className="flex items-center space-x-2">
             <span className="h-2 w-2 rounded-full border border-cyan-400" />
@@ -101,7 +87,7 @@ export default function CloudinarySlideshowMinimalHero() {
           </div>
           <div className="flex items-center space-x-2">
             <span className="h-2 w-2 rounded-full border border-cyan-400" />
-            <span>Home Visits Available</span>
+            <span>Emergency Support Available</span>
           </div>
         </div>
 

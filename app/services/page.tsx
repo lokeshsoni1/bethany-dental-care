@@ -31,7 +31,7 @@ const services = [
     shortDescription:
       "Comprehensive medical consultations for all ages with personalized treatment plans.",
     description:
-      "Our general physician services cover a wide range of health concerns, from routine checkups to complex medical conditions. Dr. Agrawal takes a thorough approach to diagnosis and treatment, ensuring every patient receives personalized care.",
+      "Our general physician services cover a wide range of health concerns, from routine checkups to complex medical conditions. Our team takes a thorough approach to diagnosis and treatment, ensuring every patient receives personalized care.",
     features: [
       "Complete health assessments",
       "Chronic disease management",
@@ -94,7 +94,7 @@ const services = [
     icon: Home,
     title: "Home Visit Support",
     shortDescription:
-      "Convenient medical care at your doorstep across Noida and Delhi NCR.",
+      "Convenient medical care at your doorstep across Manhattan and New York City.",
     description:
       "We understand that visiting a clinic isn&apos;t always possible. Our home visit service brings quality medical care to your doorstep, perfect for elderly patients, those with mobility issues, or anyone who prefers the comfort of home.",
     features: [
@@ -214,7 +214,7 @@ export default function ServicesPage() {
               {
                 icon: Home,
                 title: "Home Visits",
-                description: "Available across Delhi NCR",
+                description: "Available across New York City",
               },
               {
                 icon: Shield,

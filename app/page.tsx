@@ -67,7 +67,7 @@ const services = [
     icon: Home,
     title: "Home Visit Support",
     description:
-      "Convenient medical care at your doorstep across Noida and Delhi NCR.",
+      "Convenient medical care at your doorstep across Manhattan and New York City.",
   },
   {
     icon: Wind,
@@ -112,31 +112,31 @@ const values = [
     icon: Award,
     title: "Expert Excellence",
     description:
-      "Led by Dr. Amit Agrawal with years of experience in comprehensive healthcare.",
+      "Led by Dr. Sarah Bethany with years of experience in comprehensive dental care.",
   },
 ];
 
 const testimonials = [
   {
-    name: "Priya Sharma",
+    name: "Sarah Jenkins",
     role: "Patient since 2019",
     content:
-      "Dr. Agrawal's attention to detail and genuine concern for my health has made all the difference. The home visit service during my recovery was exceptional.",
+      "Dr. Bethany's attention to detail and genuine concern for my dental health has made all the difference. The mobile care service during my recovery was exceptional.",
     rating: 5,
   },
   {
-    name: "Rajesh Kumar",
-    role: "Diabetes Care Patient",
+    name: "Robert Miller",
+    role: "Preventative Care Patient",
     content:
-      "Managing my diabetes has become so much easier with Dr. Agrawal's guidance. His personalized approach and regular monitoring have transformed my health.",
+      "Managing my oral health has become so much easier with Dr. Bethany's guidance. Her personalized approach and regular monitoring have transformed my health.",
     rating: 5,
     featured: true,
   },
   {
-    name: "Anita Verma",
+    name: "Emily Davis",
     role: "Family Healthcare",
     content:
-      "Our entire family trusts Agrawal Clinic for all our healthcare needs. The clinic is modern, clean, and the staff is incredibly professional.",
+      "Our entire family trusts Bethany Dental Care for all our dental needs. The clinic is modern, clean, and the staff is incredibly professional.",
     rating: 5,
   },
 ];
@@ -243,7 +243,7 @@ export default function HomePage() {
           <SectionHeading
             badge="Why Choose Us"
             title="Healthcare You Can Trust"
-            description="At Agrawal Clinic, we combine medical excellence with genuine compassion to deliver healthcare that truly makes a difference."
+            description="At Bethany Dental Care, we combine dental excellence with genuine compassion to deliver oral care that truly makes a difference."
             light
           />
 
@@ -344,17 +344,17 @@ export default function HomePage() {
                 Meet Your Doctor
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-5 sm:mb-6">
-                Dr. Amit Agrawal
+                Dr. Sarah Bethany
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                With over 15 years of dedicated medical practice, Dr. Amit
-                Agrawal brings a unique combination of clinical expertise and
+                With over 15 years of dedicated dental practice, Dr. Sarah
+                Bethany brings a unique combination of clinical expertise and
                 compassionate care to every patient interaction.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                After completing his MBBS and MD from prestigious institutions,
-                Dr. Agrawal has been serving the Noida community with a
-                patient-first philosophy. His approach combines modern medical
+                After completing her DDS and DMD from prestigious institutions,
+                Dr. Bethany has been serving the New York City community with a
+                patient-first philosophy. Her approach combines modern dental
                 practices with personalized attention, ensuring each patient
                 receives care tailored to their specific needs.
               </p>
@@ -362,10 +362,10 @@ export default function HomePage() {
               {/* Qualifications */}
               <div className="space-y-3 mb-8">
                 {[
-                  "MBBS from reputed medical institution",
-                  "MD in Internal Medicine",
-                  "Specialization in Diabetes & Metabolic Disorders",
-                  "Member of Indian Medical Association",
+                  "DDS/DMD from Columbia University",
+                  "Residency in General Dentistry",
+                  "Fellowship in Cosmetic & Implant Dentistry",
+                  "Member of American Dental Association",
                 ].map((qual, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
@@ -397,7 +397,7 @@ export default function HomePage() {
           <SectionHeading
             badge="Testimonials"
             title="What Our Patients Say"
-            description="Don't just take our word for it. Hear from families who have experienced the Agrawal Clinic difference."
+            description="Don't just take our word for it. Hear from families who have experienced the Bethany Dental Care difference."
           />
 
           <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
@@ -459,7 +459,7 @@ export default function HomePage() {
               </h2>
               <p className="text-base sm:text-lg text-primary-foreground/80 mb-8 sm:mb-10 text-pretty">
                 Schedule your consultation today and take the first step towards
-                better health. Home visits available across Noida and Delhi NCR.
+                better health. Home visits available across Manhattan and New York City.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button
@@ -478,7 +478,7 @@ export default function HomePage() {
                   variant="outline"
                   className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8 w-full sm:w-auto"
                 >
-                  <Link href="tel:+919876543210">
+                  <Link href="tel:+12125550199">
                     <Phone className="w-5 h-5 mr-2" />
                     Call Now
                   </Link>

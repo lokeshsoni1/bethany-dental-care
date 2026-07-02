@@ -11,9 +11,9 @@ export default function FloatingGlassNavbar() {
         {/* Brand Vector Node Anchor */}
         <div className="flex items-center space-x-2.5 cursor-pointer">
           <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center">
-            <span className="font-sans font-black text-white text-sm">L</span>
+            <span className="font-sans font-black text-white text-sm">B</span>
           </div>
-          <span className="font-sans font-bold text-white text-base tracking-tight">Lumora</span>
+          <span className="font-sans font-bold text-white text-base tracking-tight">Bethany</span>
         </div>
 
         {/* System Navigation Center Gaps */}

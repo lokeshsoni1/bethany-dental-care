@@ -28,12 +28,12 @@ const faqCategories = [
       {
         question: "How do I book an appointment?",
         answer:
-          "You can book an appointment through our website by visiting the 'Book Appointment' page, calling us at +91 98765 43210, or messaging us on WhatsApp. Our team will confirm your appointment within 2 hours during working hours.",
+          "You can book an appointment through our website by visiting the 'Book Appointment' page, calling us at +1 (212) 555-0199, or messaging us on WhatsApp. Our team will confirm your appointment within 2 hours during working hours.",
       },
       {
         question: "What are your working hours?",
         answer:
-          "We're open Monday through Saturday from 9:00 AM to 8:00 PM. On Sundays, we're available for emergencies only. You can reach our emergency line 24/7 for urgent medical needs.",
+          "We're open Monday through Saturday from 9:00 AM to 8:00 PM. On Sundays, we're available for emergencies only. You can reach our emergency line 24/7 for urgent dental needs.",
       },
       {
         question: "Can I reschedule my appointment?",
@@ -43,61 +43,61 @@ const faqCategories = [
       {
         question: "What should I bring to my appointment?",
         answer:
-          "Please bring a valid ID, any previous medical records or test reports relevant to your visit, a list of current medications you're taking, and your insurance card if applicable.",
+          "Please bring a valid ID, any previous dental records or dental X-rays relevant to your visit, a list of current medications you're taking, and your dental insurance card if applicable.",
       },
     ],
   },
   {
     id: "homevisits",
     icon: Home,
-    label: "Home Visits",
+    label: "Special Accommodations",
     questions: [
       {
-        question: "Do you offer home visit services?",
+        question: "Do you offer mobile or home dental services?",
         answer:
-          "Yes, we provide comprehensive home visit services across Noida and Delhi NCR. This includes consultations, basic diagnostics, IV therapy, and ongoing care for patients who cannot visit the clinic.",
+          "Yes, we provide specialized mobile dental services across Manhattan and select areas of New York City for homebound patients, seniors, and those requiring special accommodations. This includes basic consultations, cleanings, and emergency evaluations.",
       },
       {
-        question: "What areas do you cover for home visits?",
+        question: "What areas do you cover for mobile dental visits?",
         answer:
-          "We currently serve all sectors of Noida, Greater Noida, Ghaziabad, and selected areas of Delhi NCR. Please contact us to confirm if your area is within our service zone.",
+          "We currently serve Manhattan, Brooklyn, and Queens. Please contact us to confirm if your specific ZIP code is within our mobile dental service zone.",
       },
       {
-        question: "How quickly can a doctor visit my home?",
+        question: "How quickly can a dentist visit my home?",
         answer:
-          "For non-emergency home visits, we typically schedule within 24-48 hours based on availability. For urgent needs, we try to accommodate same-day visits. Emergency home visits are prioritized and arranged as quickly as possible.",
+          "For non-emergency mobile dental visits, we typically schedule within 24-48 hours based on availability. For urgent needs, we try to accommodate same-day visits.",
       },
       {
-        question: "Is there an additional charge for home visits?",
+        question: "Is there an additional charge for mobile dental visits?",
         answer:
-          "Yes, home visits include an additional fee to cover travel and the convenience of receiving care at your doorstep. The exact fee depends on your location and the services required. We'll provide a clear estimate when you book.",
+          "Yes, mobile dental visits include an additional fee to cover travel and mobile equipment setup. The exact fee depends on your location in NYC and the services required. We'll provide a clear estimate when you book.",
       },
     ],
   },
   {
     id: "services",
     icon: Stethoscope,
-    label: "Medical Services",
+    label: "Dental Services",
     questions: [
       {
         question: "What services do you offer?",
         answer:
-          "We offer a comprehensive range of services including general physician consultations, diabetes management, emergency care, IV fluids & hydration therapy, oxygen support, comprehensive diagnostics, and wellness consultations. Visit our Services page for detailed information.",
+          "We offer a comprehensive range of dental services including general physician dental evaluations, diabetes-focused periodontal management, emergency care, professional cosmetic dentistry, home visit support, and wellness oral consultations. Visit our Services page for detailed information.",
       },
       {
         question: "Do you provide emergency care?",
         answer:
-          "Yes, we provide 24/7 emergency care. For medical emergencies, please call our emergency line immediately. Our team is equipped to handle various emergency situations and can coordinate hospital admissions if needed.",
+          "Yes, we provide 24/7 emergency care. For dental emergencies, please call our emergency line immediately. Our team is equipped to handle various emergency situations and can coordinate prompt treatment.",
       },
       {
         question: "Can you help with chronic disease management?",
         answer:
-          "Absolutely. Dr. Agrawal specializes in managing chronic conditions including diabetes, hypertension, and other metabolic disorders. We create personalized management plans and provide regular monitoring to help patients maintain optimal health.",
+          "Absolutely. Our team specializes in managing conditions that affect oral health, including diabetic periodontal care and other systemic-oral health connections. We create personalized management plans and provide regular monitoring.",
       },
       {
         question: "Do you offer diagnostic services?",
         answer:
-          "Yes, we offer a range of diagnostic services including blood tests, urine analysis, ECG, blood pressure monitoring, glucose testing, and lipid profiles. For advanced diagnostics, we have tie-ups with reputed labs and can arrange home sample collection.",
+          "Yes, we offer a range of diagnostic services including digital X-rays, intraoral imaging, periodontal charting, and comprehensive oral cancer screenings.",
       },
     ],
   },
@@ -109,12 +109,12 @@ const faqCategories = [
       {
         question: "What payment methods do you accept?",
         answer:
-          "We accept cash, all major credit/debit cards, UPI payments (GPay, PhonePe, Paytm), and bank transfers. Payment is typically collected at the time of service unless other arrangements have been made.",
+          "We accept cash, all major credit/debit cards, digital wallets (Apple Pay, Google Pay), and bank transfers. Payment is typically collected at the time of service unless other arrangements have been made.",
       },
       {
-        question: "Do you accept health insurance?",
+        question: "Do you accept dental insurance?",
         answer:
-          "We accept cashless treatment under select insurance providers. Please contact us with your insurance details before your appointment, and we'll verify your coverage. For non-panel insurances, we provide detailed bills for reimbursement claims.",
+          "We accept most major PPO dental insurance plans. Please contact us with your insurance details before your appointment, and we'll verify your coverage. For out-of-network insurance, we provide detailed bills for reimbursement claims.",
       },
       {
         question: "What is the consultation fee?",
@@ -124,7 +124,7 @@ const faqCategories = [
       {
         question: "Are there any packages for regular checkups?",
         answer:
-          "Yes, we offer various health checkup packages including annual wellness packages, diabetes monitoring packages, and senior citizen health plans. These packages provide comprehensive care at discounted rates compared to individual services.",
+          "Yes, we offer various dental health checkup packages including annual wellness packages, preventative hygiene plans, and senior dental health plans.",
       },
     ],
   },

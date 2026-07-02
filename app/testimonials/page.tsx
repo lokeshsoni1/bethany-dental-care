@@ -11,89 +11,89 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    name: "Priya Sharma",
+    name: "Sarah Jenkins",
     role: "Patient since 2019",
     content:
-      "Dr. Agrawal's attention to detail and genuine concern for my health has made all the difference. The home visit service during my recovery was exceptional. I couldn't have asked for better care.",
+      "Dr. Bethany's attention to detail and genuine concern for my dental health has made all the difference. The mobile care service during my recovery was exceptional. I couldn't have asked for better care.",
     rating: 5,
   },
   {
-    name: "Rajesh Kumar",
-    role: "Diabetes Care Patient",
+    name: "Robert Miller",
+    role: "Preventative Care Patient",
     content:
-      "Managing my diabetes has become so much easier with Dr. Agrawal's guidance. His personalized approach and regular monitoring have transformed my health. My HbA1c levels have never been better.",
+      "Managing my oral health has become so much easier with Dr. Bethany's guidance. Her personalized approach and regular monitoring have transformed my health.",
     rating: 5,
     featured: true,
   },
   {
-    name: "Anita Verma",
+    name: "Emily Davis",
     role: "Family Healthcare",
     content:
-      "Our entire family trusts Agrawal Clinic for all our healthcare needs. The clinic is modern, clean, and the staff is incredibly professional. Dr. Agrawal treats us like family.",
+      "Our entire family trusts Bethany Dental Care for all our dental needs. The clinic is modern, clean, and the staff is incredibly professional. Dr. Bethany treats us like family.",
     rating: 5,
   },
   {
-    name: "Sunil Gupta",
+    name: "Jack Peterson",
     role: "Emergency Care Patient",
     content:
-      "When my father had a health emergency at midnight, Dr. Agrawal was available immediately. His quick response and expert care saved my father's life. We are forever grateful.",
+      "When my father had a dental emergency at midnight, Dr. Bethany was available immediately. Her quick response and expert care saved my father's health. We are forever grateful.",
     rating: 5,
   },
   {
-    name: "Meena Patel",
-    role: "Home Visit Patient",
+    name: "Margaret Sullivan",
+    role: "Mobile Care Patient",
     content:
-      "As an elderly patient with mobility issues, the home visit service has been a blessing. Dr. Agrawal comes to my home for regular checkups, making healthcare truly accessible.",
+      "As an elderly patient with mobility issues, the mobile home visit service has been a blessing. Dr. Bethany comes to my home for regular checkups, making dental care truly accessible.",
     rating: 5,
   },
   {
-    name: "Vikram Singh",
+    name: "Michael Chang",
     role: "Wellness Program",
     content:
-      "The comprehensive wellness checkup at Agrawal Clinic helped detect early signs of a condition I wasn't aware of. Early detection and Dr. Agrawal's treatment plan have been life-changing.",
+      "The comprehensive wellness checkup at Bethany Dental Care helped detect early signs of a condition I wasn't aware of. Early detection and Dr. Bethany's treatment plan have been life-changing.",
     rating: 5,
   },
   {
-    name: "Kavita Reddy",
+    name: "Amanda Ross",
     role: "Patient since 2020",
     content:
-      "What sets Dr. Agrawal apart is that he actually listens. He takes time to understand your concerns and explains everything clearly. It's rare to find such patient-centered care.",
+      "What sets Dr. Bethany apart is that she actually listens. She takes time to understand your concerns and explains everything clearly. It's rare to find such patient-centered care.",
     rating: 5,
   },
   {
-    name: "Arun Mehta",
-    role: "IV Therapy Patient",
+    name: "Thomas Clark",
+    role: "Cosmetic Patient",
     content:
-      "I was severely dehydrated after a bout of illness, and the IV therapy at Agrawal Clinic helped me recover quickly. The treatment was administered professionally and I felt better within hours.",
+      "I received professional cosmetic dentistry at Bethany Dental Care and the results were incredible. The treatment was administered safely and professionally, and I couldn't be happier.",
     rating: 5,
   },
   {
-    name: "Sunita Joshi",
+    name: "Laura Bennett",
     role: "Regular Patient",
     content:
-      "From the warm reception to Dr. Agrawal's thorough consultation, every aspect of the experience is premium. The clinic maintains the highest standards of hygiene and care.",
+      "From the warm reception to Dr. Bethany's thorough consultation, every aspect of the experience is premium. The clinic maintains the highest standards of hygiene and care.",
     rating: 5,
     featured: true,
   },
   {
-    name: "Rahul Tiwari",
-    role: "Corporate Health Checkup",
+    name: "Kevin Murphy",
+    role: "Corporate Dental Program",
     content:
-      "Our company chose Agrawal Clinic for employee health checkups, and it was an excellent decision. The process was efficient, and the reports were detailed and helpful.",
+      "Our company chose Bethany Dental Care for employee dental screenings, and it was an excellent decision. The process was efficient, and the reports were detailed and helpful.",
     rating: 5,
   },
   {
-    name: "Deepa Nair",
-    role: "Chronic Care Patient",
+    name: "Sandra Collins",
+    role: "Preventative Patient",
     content:
-      "Living with a chronic condition is challenging, but Dr. Agrawal's continuous support and optimistic approach have given me hope. He goes beyond treating symptoms to improving quality of life.",
+      "Living with chronic sensitivity is challenging, but Dr. Bethany's continuous support and optimistic approach have given me hope. She goes beyond treating symptoms to improving quality of life.",
     rating: 5,
   },
   {
-    name: "Manoj Kumar",
+    name: "Steven Wright",
     role: "Patient since 2017",
     content:
-      "I've been Dr. Agrawal's patient for over 7 years now. His consistency in providing excellent care and his knowledge of my medical history makes every consultation effective.",
+      "I've been Dr. Bethany's patient for over 7 years now. His consistency in providing excellent care and his knowledge of my dental history makes every consultation effective.",
     rating: 5,
   },
 ];
@@ -142,7 +142,7 @@ export default function TestimonialsPage() {
               className="text-base sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
               Real stories from real patients. Discover why thousands of
-              families trust Agrawal Clinic for their healthcare needs.
+              families trust Bethany Dental Care for their oral healthcare needs.
             </motion.p>
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function TestimonialsPage() {
                 ))}
               </div>
               <blockquote className="text-lg sm:text-xl lg:text-2xl font-medium leading-relaxed mb-8">
-                &quot;Dr. Agrawal is not just a doctor; he&apos;s a healer in the truest
+                &quot;Dr. Bethany is not just a dentist; she&apos;s a healer in the truest
                 sense. His dedication to patient care, combined with his
                 expertise, creates an unparalleled healthcare experience. Our
                 family has been under his care for years, and we couldn&apos;t be
@@ -201,10 +201,10 @@ export default function TestimonialsPage() {
               </blockquote>
               <div className="flex items-center justify-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center text-2xl font-semibold text-accent">
-                  R
+                  H
                 </div>
                 <div className="text-left">
-                  <p className="font-semibold text-lg">The Kapoor Family</p>
+                  <p className="font-semibold text-lg">The Harrison Family</p>
                   <p className="text-primary-foreground/70">
                     Patients since 2016
                   </p>

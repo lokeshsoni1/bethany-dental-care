@@ -79,17 +79,17 @@ export function Footer() {
           >
             <Link href="/" className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                <span className="text-accent font-bold text-xl">A</span>
+                <span className="text-accent font-bold text-xl">B</span>
               </div>
               <div>
                 <span className="font-semibold text-xl text-primary-foreground">
-                  Agrawal Clinic
+                  Bethany Dental Care
                 </span>
               </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
-              Excellence in personalized healthcare. Providing compassionate,
-              world-class medical care to families across Noida and Delhi NCR.
+              Excellence in personalized dental care. Providing compassionate,
+              world-class oral healthcare to families across New York City.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -170,27 +170,27 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-0.5 shrink-0" />
                 <span className="text-primary-foreground/70 text-sm">
-                  Sector 62, Noida,
+                  45 Rockefeller Plaza, Suite 200,
                   <br />
-                  Uttar Pradesh 201301
+                  New York, NY 10111
                 </span>
               </li>
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+12125550199"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent text-sm transition-colors"
                 >
                   <Phone className="w-5 h-5 text-accent shrink-0" />
-                  +91 98765 43210
+                  +1 (212) 555-0199
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@agrawalclinic.com"
+                  href="mailto:hello@bethanydentalnyc.com"
                   className="flex items-center gap-3 text-primary-foreground/70 hover:text-accent text-sm transition-colors"
                 >
                   <Mail className="w-5 h-5 text-accent shrink-0" />
-                  info@agrawalclinic.com
+                  hello@bethanydentalnyc.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -207,7 +207,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-5 sm:py-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/50 text-sm">
-            © {new Date().getFullYear()} Agrawal Clinic. All rights reserved.
+            © {new Date().getFullYear()} Bethany Dental Care. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm">
             <Link

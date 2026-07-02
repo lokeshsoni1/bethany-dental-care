@@ -126,7 +126,7 @@ export default function BookAppointmentPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
             >
-              Book your appointment with Dr. Amit Agrawal in just a few clicks.
+              Book your appointment with Bethany Dental Care in just a few clicks.
               Choose your preferred service, date, and time.
             </motion.p>
           </div>
@@ -202,7 +202,7 @@ export default function BookAppointmentPage() {
                         Home Visit Required?
                       </p>
                       <p className="text-sm text-muted-foreground">
-                        We&apos;ll come to your location in Noida/Delhi NCR
+                        We&apos;ll come to your location in Manhattan/NYC
                       </p>
                     </div>
                     <div
@@ -308,7 +308,7 @@ export default function BookAppointmentPage() {
                         <Input
                           id="phone"
                           type="tel"
-                          placeholder="+91 XXXXX XXXXX"
+                          placeholder="+1 (212) XXXXXXX"
                           value={formData.phone}
                           onChange={(e) =>
                             setFormData({ ...formData, phone: e.target.value })
@@ -435,9 +435,9 @@ export default function BookAppointmentPage() {
                 <div className="flex items-center gap-3 mb-4">
                   <Stethoscope className="w-8 h-8 text-accent" />
                   <div>
-                    <p className="font-semibold">Dr. Amit Agrawal</p>
+                    <p className="font-semibold">Dr. Sarah Bethany</p>
                     <p className="text-sm text-primary-foreground/70">
-                      MBBS, MD
+                      DDS, DMD
                     </p>
                   </div>
                 </div>
@@ -450,9 +450,9 @@ export default function BookAppointmentPage() {
                   size="sm"
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                 >
-                  <Link href="tel:+919876543210">
+                  <Link href="tel:+12125550199">
                     <Phone className="w-4 h-4 mr-2" />
-                    +91 98765 43210
+                    +1 (212) 555-0199
                   </Link>
                 </Button>
               </div>

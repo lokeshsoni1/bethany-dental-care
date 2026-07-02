@@ -11,7 +11,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-muted-foreground mb-8">
-            This is a demo terms of service page for Agrawal Clinic. In a live
+            This is a demo terms of service page for Bethany Dental Care. In a live
             deployment, this content would describe the conditions of use, legal
             disclaimers, and limitations of liability for the clinic&apos;s
             website and services.
@@ -19,7 +19,7 @@ export default function TermsPage() {
           <p className="text-muted-foreground">
             All appointments, services, and medical references on this demo
             experience are illustrative only and should not be interpreted as
-            real medical advice or treatment plans.
+            real dental advice or treatment plans.
           </p>
         </div>
       </section>

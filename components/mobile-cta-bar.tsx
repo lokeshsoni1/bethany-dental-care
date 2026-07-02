@@ -16,7 +16,7 @@ export function MobileCtaBar() {
             Book Now
           </Link>
           <Link
-            href="tel:+919876543210"
+            href="tel:+12125550199"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-primary/20 bg-card px-4 text-sm font-semibold text-primary"
           >
             <Phone className="h-4 w-4" />

@@ -13,22 +13,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Agrawal Clinic - Dr. Amit Agrawal | Premium Healthcare in Noida",
-    template: "%s | Agrawal Clinic",
+    default: "Bethany Dental Care - Premium New York City Dental Clinic",
+    template: "%s | Bethany Dental Care",
   },
   description:
-    "Experience world-class personalized healthcare at Agrawal Clinic. Dr. Amit Agrawal offers comprehensive medical services including general physician care, diabetes management, emergency care, and home visits in Noida, Delhi NCR.",
+    "Experience world-class personalized oral healthcare at Bethany Dental Care. We offer comprehensive dental services including general dentistry, cosmetic dentistry, emergency dental care, and cleanings at 45 Rockefeller Plaza, New York City.",
   keywords: [
-    "Agrawal Clinic",
-    "Dr. Amit Agrawal",
-    "Noida clinic",
-    "private healthcare",
-    "general physician",
-    "diabetes management",
-    "home visits",
-    "Delhi NCR doctor",
+    "Bethany Dental Care",
+    "Manhattan dentist",
+    "Rockefeller Plaza dentist",
+    "NYC dental clinic",
+    "private dentist New York",
+    "cosmetic dentistry NYC",
+    "emergency dentist NYC",
+    "New York dentist",
   ],
-  authors: [{ name: "Dr. Amit Agrawal" }],
+  authors: [{ name: "Bethany Dental Care" }],
   generator: "v0.app",
   icons: {
     icon: [

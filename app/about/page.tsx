@@ -24,39 +24,39 @@ import { Button } from "@/components/ui/button";
 const timeline = [
   {
     year: "2008",
-    title: "Medical Education",
+    title: "Dental Education",
     description:
-      "Completed MBBS from a prestigious medical institution with distinction.",
+      "Graduated from Columbia University College of Dental Medicine with honors.",
   },
   {
     year: "2011",
     title: "Specialization",
     description:
-      "Pursued MD in Internal Medicine, focusing on comprehensive patient care.",
+      "Completed residency training in Advanced Education in General Dentistry.",
   },
   {
     year: "2013",
     title: "Advanced Training",
     description:
-      "Specialized training in Diabetes and Metabolic Disorders management.",
+      "Completed fellowship in Cosmetic Dentistry and Oral Implantology.",
   },
   {
     year: "2015",
-    title: "Agrawal Clinic Founded",
+    title: "Bethany Dental Founded",
     description:
-      "Established Agrawal Clinic in Noida with a vision of personalized healthcare.",
+      "Established Bethany Dental Care in Manhattan, NYC, with a vision of premium oral health.",
   },
   {
     year: "2020",
-    title: "Home Visit Program",
+    title: "Mobile Dental Services",
     description:
-      "Launched comprehensive home healthcare services across Delhi NCR.",
+      "Launched concierge mobile dental services for homebound patients in Manhattan.",
   },
   {
     year: "Present",
     title: "Continued Excellence",
     description:
-      "Serving 5000+ happy patients with expanded services and modern facilities.",
+      "Serving NYC with state-of-the-art facilities and elite preventative care.",
   },
 ];
 
@@ -88,12 +88,12 @@ const facilities = [
 ];
 
 const certifications = [
-  "MBBS - Bachelor of Medicine and Surgery",
-  "MD - Doctor of Medicine (Internal Medicine)",
-  "Certified in Diabetes Management",
-  "Member, Indian Medical Association (IMA)",
-  "Member, Association of Physicians of India",
-  "Advanced Life Support Certified",
+  "DDS - Doctor of Dental Surgery",
+  "DMD - Doctor of Medicine in Dentistry",
+  "Certified in Advanced Cosmetic Dentistry",
+  "Member, American Dental Association (ADA)",
+  "Member, American Academy of Cosmetic Dentistry (AACD)",
+  "Advanced Oral Implantology Certified",
 ];
 
 export default function AboutPage() {
@@ -123,7 +123,7 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 sm:mb-6"
             >
-              Dedicated to Your Health
+              Dedicated to Your Dental Health
               <br />
               <span className="text-gradient">Since 2015</span>
             </motion.h1>
@@ -133,8 +133,8 @@ export default function AboutPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
             >
-              Agrawal Clinic was founded with a simple mission: to provide
-              compassionate, personalized healthcare that treats the whole
+              Bethany Dental Care was founded with a simple mission: to provide
+              compassionate, personalized oral healthcare that treats the whole
               person, not just the symptoms.
             </motion.p>
           </div>
@@ -159,10 +159,10 @@ export default function AboutPage() {
                 Our Mission
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                To deliver exceptional, patient-centered healthcare that
-                combines medical expertise with genuine compassion. We strive to
-                make quality healthcare accessible to every family in Noida and
-                Delhi NCR through our clinic and home visit services.
+                To deliver exceptional, patient-centered oral healthcare that
+                combines dental expertise with genuine compassion. We strive to
+                make quality dental care accessible to every family in Manhattan
+                and New York City through our clinic and mobile services.
               </p>
             </motion.div>
 
@@ -207,9 +207,9 @@ export default function AboutPage() {
                       <Stethoscope className="w-20 h-20 text-primary" />
                     </div>
                     <p className="text-xl font-semibold text-foreground">
-                      Dr. Amit Agrawal
+                      Dr. Sarah Bethany
                     </p>
-                    <p className="text-muted-foreground">MBBS, MD</p>
+                    <p className="text-muted-foreground">DDS, DMD</p>
                   </div>
                 </div>
               </div>
@@ -249,22 +249,22 @@ export default function AboutPage() {
               className="order-1 lg:order-2"
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-xs font-medium tracking-wide uppercase text-primary mb-4">
-                Your Physician
+                Your Dentist
               </span>
               <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-5 sm:mb-6">
-                Dr. Amit Agrawal
+                Dr. Sarah Bethany
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Dr. Amit Agrawal is a highly accomplished physician with over 15
-                years of experience in providing comprehensive medical care. His
-                patient-first approach has earned him the trust of thousands of
-                families across Noida and Delhi NCR.
+                Dr. Sarah Bethany is a highly accomplished dentist with over 15
+                years of experience in providing comprehensive oral care. Her
+                patient-first approach has earned her the trust of thousands of
+                families across Manhattan and New York City.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                After completing his medical education at prestigious
-                institutions, Dr. Agrawal dedicated himself to building a
-                practice that combines the latest medical advances with
-                old-fashioned care and attention. He believes that every patient
+                After completing her dental education at prestigious
+                institutions, Dr. Bethany dedicated herself to building a
+                practice that combines the latest dental advances with
+                old-fashioned care and attention. She believes that every patient
                 deserves to be heard, understood, and treated with dignity.
               </p>
 
@@ -399,11 +399,11 @@ export default function AboutPage() {
                 Visit Us
               </span>
               <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground mb-5 sm:mb-6">
-                Conveniently Located in Noida
+                Conveniently Located in Manhattan
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
                 Our clinic is easily accessible and located in the heart of
-                Sector 62, Noida. We offer ample parking and a comfortable,
+                Rockefeller Plaza, New York. We offer convenient transit links and a comfortable,
                 welcoming environment for all our patients.
               </p>
 
@@ -413,7 +413,7 @@ export default function AboutPage() {
                   <div>
                     <p className="font-medium text-foreground">Address</p>
                     <p className="text-muted-foreground text-sm">
-                      Sector 62, Noida, Uttar Pradesh 201301
+                      45 Rockefeller Plaza, Suite 200, New York, NY 10111
                     </p>
                   </div>
                 </div>

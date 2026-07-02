@@ -11,13 +11,13 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-muted-foreground mb-8">
-            This is a demo privacy policy for Agrawal Clinic. In a production
+            This is a demo privacy policy for Bethany Dental Care. In a production
             website, this page would outline how patient information and data
             are collected, stored, and protected in line with applicable laws.
           </p>
           <p className="text-muted-foreground">
             All forms and contact details on this demo experience are for
-            showcase purposes only and do not represent a real medical practice
+            showcase purposes only and do not represent a real dental practice
             or patient onboarding workflow.
           </p>
         </div>
