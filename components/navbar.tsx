@@ -19,7 +19,7 @@ export default function FloatingGlassNavbar() {
         {/* System Navigation Center Gaps */}
         <nav className="hidden md:flex items-center space-x-8 font-sans text-xs uppercase tracking-widest text-zinc-300 font-medium">
           <a href="#home" className="hover:text-white transition-colors">Home</a>
-          <a href="#about" className="hover:text-white transition-colors">About Us</a>
+          <a href="/about" className="hover:text-white transition-colors">About Us</a>
           <a href="#services" className="hover:text-white transition-colors">Services</a>
           <a href="#blog" className="hover:text-white transition-colors">Blog</a>
         </nav>
