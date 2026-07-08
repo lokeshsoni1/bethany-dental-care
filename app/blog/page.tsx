@@ -50,7 +50,7 @@ Compliance is a critical factor in Invisalign success. Aligners must be worn for
     category: "Endodontics",
     readTime: "4 min read",
     images: [
-      "https://images.unsplash.com/photo-1476137682422-ee53857e4e1a?q=80&w=200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=200&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1504813184591-015556c5c50f?q=80&w=200&auto=format&fit=crop",
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=200&auto=format&fit=crop"
     ],

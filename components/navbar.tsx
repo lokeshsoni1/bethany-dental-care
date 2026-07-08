@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { PremiumIconButton } from "@/components/ui/button-with-icon";
 
 export default function FloatingGlassNavbar() {
@@ -11,10 +12,45 @@ export default function FloatingGlassNavbar() {
         
         {/* Brand Vector Node Anchor */}
         <Link href="/" className="flex items-center space-x-2.5 cursor-pointer">
-          <div className="h-8 w-8 rounded-full bg-gradient-to-tr from-cyan-400 to-blue-500 flex items-center justify-center">
-            <span className="font-sans font-black text-white text-sm">B</span>
-          </div>
-          <span className="font-sans font-bold text-white text-base tracking-tight text-white">Bethany</span>
+          <motion.div 
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 3 / "Bethany".length,
+                }
+              }
+            }}
+            style={{ 
+              fontFamily: "var(--font-caveat), cursive",
+              willChange: "transform, opacity" 
+            }}
+            className="text-3xl font-extrabold tracking-[0.18em] text-white flex select-none transform-gpu"
+          >
+            {Array.from("Bethany").map((char, index) => (
+              <motion.span
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8, y: 5 },
+                  visible: { 
+                    opacity: 1, 
+                    scale: 1, 
+                    y: 0,
+                    transition: {
+                      duration: 0.4,
+                      ease: "easeOut"
+                    }
+                  }
+                }}
+                className="inline-block transform-gpu"
+              >
+                {char}
+              </motion.span>
+            ))}
+          </motion.div>
         </Link>
 
         {/* System Navigation Center Gaps */}
