@@ -77,14 +77,15 @@ export function Footer() {
             className="lg:col-span-1"
           >
             <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
-                <span className="text-accent font-bold text-xl">B</span>
-              </div>
-              <div>
-                <span className="font-semibold text-xl text-primary-foreground">
-                  Bethany Dental Care
-                </span>
-              </div>
+              <span 
+                style={{ 
+                  fontFamily: "var(--font-caveat), cursive",
+                  letterSpacing: "0.18em"
+                }}
+                className="text-3xl font-extrabold text-white select-none"
+              >
+                Bethany Dental Care
+              </span>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               Excellence in personalized dental care. Providing compassionate,

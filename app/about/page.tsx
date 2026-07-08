@@ -228,18 +228,20 @@ export default function AboutPage() {
       </section>
 
       {/* SECTION C: The Clinical Team Grid Mesh Architecture */}
-      <section className="relative overflow-hidden bg-transparent py-14 sm:py-20">
-        {/* Enforce dedicated section background image with 3% blur filter */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-[0.03] transform-gpu filter blur-[2px]" 
-          style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783540390/Bethany_Dental_Care_wall_2K_202607090122_gzbl9h.jpg')` 
-          }}
-        />
-
+      <section 
+        className="relative overflow-hidden py-14 sm:py-20 z-10"
+        style={{
+          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.93), rgba(9, 25, 44, 0.93)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783540390/Bethany_Dental_Care_wall_2K_202607090122_gzbl9h.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(0px)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)"
+        }}
+      >
         <div className="container mx-auto container-gutter relative z-10">
-          <h2 className="text-2xl sm:text-4xl font-bold text-center text-foreground mb-4">Our Clinical Specialist Team</h2>
-          <p className="text-center text-muted-foreground max-w-xl mx-auto mb-16 text-sm sm:text-base">
+          <h2 className="text-2xl sm:text-4xl font-bold text-center text-white mb-4">Our Clinical Specialist Team</h2>
+          <p className="text-center text-slate-300 max-w-xl mx-auto mb-16 text-sm sm:text-base">
             A collaborative panel of elite clinicians, each holding credentials from leading institutions.
           </p>
 
@@ -251,19 +253,23 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="w-full max-w-sm bg-card border border-primary/20 dark:border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-accent/40 transition-colors group transform-gpu"
+                className="w-full max-w-sm bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-accent/40 transition-colors group transform-gpu"
               >
                 <div className="aspect-[4/3] relative bg-muted overflow-hidden">
                   <img 
                     src={team[0].image} 
                     alt={team[0].name} 
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" 
+                    onError={(e) => {
+                      e.currentTarget.src = `https://placehold.co/400x300/09192c/ffffff?text=${encodeURIComponent(team[0].name)}`;
+                      e.currentTarget.onerror = null;
+                    }}
                   />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-bold text-foreground mb-1">{team[0].name}</h3>
+                  <h3 className="text-xl font-bold text-white mb-1">{team[0].name}</h3>
                   <p className="text-xs font-bold text-accent tracking-widest uppercase mb-3">{team[0].title}</p>
-                  <p className="text-xs text-muted-foreground">{team[0].degree}</p>
+                  <p className="text-xs text-slate-300">{team[0].degree}</p>
                 </div>
               </motion.div>
             </div>
@@ -277,19 +283,23 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="bg-card border border-primary/20 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-accent/30 transition-colors group transform-gpu"
+                  className="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-accent/30 transition-colors group transform-gpu"
                 >
                   <div className="aspect-[4/3] relative bg-muted overflow-hidden">
                     <img 
                       src={doctor.image} 
                       alt={doctor.name} 
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" 
+                      onError={(e) => {
+                        e.currentTarget.src = `https://placehold.co/400x300/09192c/ffffff?text=${encodeURIComponent(doctor.name)}`;
+                        e.currentTarget.onerror = null;
+                      }}
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-foreground mb-1">{doctor.name}</h3>
+                    <h3 className="text-lg font-bold text-white mb-1">{doctor.name}</h3>
                     <p className="text-xs font-bold text-accent tracking-widest uppercase mb-2">{doctor.title}</p>
-                    <p className="text-xs text-muted-foreground">{doctor.degree}</p>
+                    <p className="text-xs text-slate-300">{doctor.degree}</p>
                   </div>
                 </motion.div>
               ))}
@@ -304,19 +314,23 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="bg-card border border-primary/20 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-accent/30 transition-colors group transform-gpu"
+                  className="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-accent/30 transition-colors group transform-gpu"
                 >
                   <div className="aspect-[4/3] relative bg-muted overflow-hidden">
                     <img 
                       src={doctor.image} 
                       alt={doctor.name} 
                       className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" 
+                      onError={(e) => {
+                        e.currentTarget.src = `https://placehold.co/400x300/09192c/ffffff?text=${encodeURIComponent(doctor.name)}`;
+                        e.currentTarget.onerror = null;
+                      }}
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-lg font-bold text-foreground mb-1">{doctor.name}</h3>
+                    <h3 className="text-lg font-bold text-white mb-1">{doctor.name}</h3>
                     <p className="text-xs font-bold text-accent tracking-widest uppercase mb-2">{doctor.title}</p>
-                    <p className="text-xs text-muted-foreground">{doctor.degree}</p>
+                    <p className="text-xs text-slate-300">{doctor.degree}</p>
                   </div>
                 </motion.div>
               ))}

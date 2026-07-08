@@ -233,14 +233,18 @@ export default function HomePage() {
       </motion.section>
 
       {/* Unified Operatory Section Wrapper */}
-      <div className="relative overflow-hidden bg-transparent">
-        {/* Background Image Layer running cleanly underneath */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none opacity-[0.03] transform-gpu filter blur-[2px]" 
-          style={{ 
-            backgroundImage: `url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783538213/Modern_dental_operatory_interior__2K_202607090041_ukinvc.jpg')` 
-          }}
-        />
+      <div 
+        className="relative overflow-hidden z-10"
+        style={{
+          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.95), rgba(9, 25, 44, 0.95)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783538213/Modern_dental_operatory_interior__2K_202607090041_ukinvc.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          filter: "blur(0px)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)"
+        }}
+      >
 
         {/* Doctor Section */}
         <motion.section
