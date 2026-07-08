@@ -231,12 +231,9 @@ export default function AboutPage() {
       <section 
         className="relative overflow-hidden py-14 sm:py-20 z-10"
         style={{
-          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.93), rgba(9, 25, 44, 0.93)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783540390/Bethany_Dental_Care_wall_2K_202607090122_gzbl9h.jpg')",
+          backgroundImage: "url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783540390/Bethany_Dental_Care_wall_2K_202607090122_gzbl9h.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(0px)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)"
         }}
       >
         <div className="container mx-auto container-gutter relative z-10">
@@ -253,7 +250,14 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="w-full max-w-sm bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-2xl hover:border-accent/40 transition-colors group transform-gpu"
+                style={{
+                  background: "rgba(255, 255, 255, 0.05)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  border: "1px solid rgba(255, 255, 255, 0.1)",
+                  borderRadius: "20px",
+                }}
+                className="w-full max-w-sm overflow-hidden shadow-2xl transition-all duration-300 hover:border-sky-400/50 hover:-translate-y-1 transform-gpu group"
               >
                 <div className="aspect-[4/3] relative bg-muted overflow-hidden">
                   <img 
@@ -283,7 +287,14 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-accent/30 transition-colors group transform-gpu"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderRadius: "20px",
+                  }}
+                  className="overflow-hidden shadow-xl transition-all duration-300 hover:border-sky-400/50 hover:-translate-y-1 transform-gpu group"
                 >
                   <div className="aspect-[4/3] relative bg-muted overflow-hidden">
                     <img 
@@ -314,7 +325,14 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="bg-slate-900/80 border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-accent/30 transition-colors group transform-gpu"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.05)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    borderRadius: "20px",
+                  }}
+                  className="overflow-hidden shadow-xl transition-all duration-300 hover:border-sky-400/50 hover:-translate-y-1 transform-gpu group"
                 >
                   <div className="aspect-[4/3] relative bg-muted overflow-hidden">
                     <img 

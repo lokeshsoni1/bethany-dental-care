@@ -236,13 +236,10 @@ export default function HomePage() {
       <div 
         className="relative overflow-hidden z-10"
         style={{
-          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.95), rgba(9, 25, 44, 0.95)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783538213/Modern_dental_operatory_interior__2K_202607090041_ukinvc.jpg')",
+          backgroundImage: "url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783538213/Modern_dental_operatory_interior__2K_202607090041_ukinvc.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
-          filter: "blur(0px)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)"
         }}
       >
 
@@ -280,15 +277,15 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="absolute -bottom-6 right-4 sm:-right-6 lg:right-6 bg-card border border-border rounded-2xl p-4 sm:p-6 shadow-soft max-w-[240px] sm:max-w-[280px]"
+                  className="absolute -bottom-6 right-4 sm:-right-6 lg:right-6 bg-zinc-950/50 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 shadow-soft max-w-[240px] sm:max-w-[280px]"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
                       <Users className="w-6 h-6 text-accent" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">15+ Years</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="font-semibold text-white">15+ Years</p>
+                      <p className="text-sm text-zinc-300">
                         Dental Experience
                       </p>
                     </div>
@@ -298,8 +295,8 @@ export default function HomePage() {
                       <CheckCircle2 className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <p className="font-semibold text-foreground">5000+</p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="font-semibold text-white">5000+</p>
+                      <p className="text-sm text-zinc-300">
                         Patients Treated
                       </p>
                     </div>
@@ -307,25 +304,34 @@ export default function HomePage() {
                 </motion.div>
               </motion.div>
 
-              {/* Content */}
+              {/* Content wrapped in ultra-premium glassmorphism card */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                style={{
+                  background: "rgba(255, 255, 255, 0.08)",
+                  backdropFilter: "blur(16px)",
+                  WebkitBackdropFilter: "blur(16px)",
+                  border: "1px solid rgba(255, 255, 255, 0.15)",
+                  borderRadius: "24px",
+                  padding: "2.5rem",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                }}
               >
-                <span className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-xs font-medium tracking-wide uppercase text-primary mb-4">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold tracking-wide uppercase text-white mb-4">
                   Meet Your Doctor
                 </span>
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-5 sm:mb-6">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-5 sm:mb-6">
                   Dr. Sarah Bethany
                 </h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <p className="text-lg text-zinc-100 leading-relaxed mb-6">
                   With over 15 years of dedicated dental practice, Dr. Sarah
                   Bethany brings a unique combination of clinical expertise and
                   compassionate care to every patient interaction.
                 </p>
-                <p className="text-muted-foreground leading-relaxed mb-8">
+                <p className="text-zinc-100 leading-relaxed mb-8 font-medium">
                   After completing her DDS and DMD from prestigious institutions,
                   Dr. Bethany has been serving the New York City community with a
                   patient-first philosophy. Her approach combines modern dental
@@ -343,12 +349,12 @@ export default function HomePage() {
                   ].map((qual, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
-                      <span className="text-foreground">{qual}</span>
+                      <span className="text-white font-medium">{qual}</span>
                     </div>
                   ))}
                 </div>
 
-                <Button asChild size="lg" className="group">
+                <Button asChild size="lg" className="group bg-primary text-white hover:bg-primary/90">
                   <Link href="/about">
                     Read Full Biography
                     <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -359,13 +365,14 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        {/* Testimonials Section */}
+        {/* Testimonials Section - Force solid white base background */}
         <motion.section
           variants={sectionStagger(0.08)}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-10% 0px" }}
           className="section-padding relative z-20"
+          style={{ backgroundColor: "#ffffff" }}
         >
           <div className="container mx-auto container-gutter relative z-20">
             <SectionHeading
@@ -385,7 +392,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-12 text-center relative z-20"
             >
-              <Button asChild variant="outline" size="lg" className="group">
+              <Button asChild variant="outline" size="lg" className="group border-slate-300 text-slate-800 hover:bg-slate-100">
                 <Link href="/testimonials">
                   Read More Reviews
                   <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
@@ -409,7 +416,16 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative border border-primary/10 dark:border-white/10 bg-slate-500/5 dark:bg-white/5 backdrop-blur-md rounded-3xl p-6 sm:p-8 lg:p-16 overflow-hidden"
+              style={{
+                background: "rgba(255, 255, 255, 0.08)",
+                backdropFilter: "blur(16px)",
+                WebkitBackdropFilter: "blur(16px)",
+                border: "1px solid rgba(255, 255, 255, 0.15)",
+                borderRadius: "24px",
+                padding: "2.5rem",
+                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+              }}
+              className="relative overflow-hidden"
             >
               {/* Background Glows */}
               <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -418,10 +434,10 @@ export default function HomePage() {
               </div>
 
               <div className="relative text-center max-w-3xl mx-auto z-10">
-                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-5 sm:mb-6 text-balance">
+                <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 sm:mb-6 text-balance">
                   Ready to Experience Premium Healthcare?
                 </h2>
-                <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10 text-pretty">
+                <p className="text-base sm:text-lg text-zinc-100 mb-8 sm:mb-10 text-pretty font-medium">
                   Schedule your consultation today and take the first step towards
                   better oral health.
                 </p>
@@ -429,7 +445,7 @@ export default function HomePage() {
                   <Button
                     asChild
                     size="lg"
-                    className="bg-primary hover:bg-primary/95 text-primary-foreground text-base px-8 w-full sm:w-auto"
+                    className="bg-primary hover:bg-primary/95 text-white text-base px-8 w-full sm:w-auto"
                   >
                     <Link href="/book-appointment">
                       <Calendar className="w-5 h-5 mr-2" />
@@ -440,7 +456,7 @@ export default function HomePage() {
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-primary text-primary hover:bg-primary/5 dark:border-white/30 dark:text-white dark:hover:bg-white/10 text-base px-8 w-full sm:w-auto"
+                    className="border-white/30 text-white hover:bg-white/10 text-base px-8 w-full sm:w-auto"
                   >
                     <Link href="tel:+12125550199">
                       <Phone className="w-5 h-5 mr-2" />
