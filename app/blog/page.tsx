@@ -14,9 +14,9 @@ const articles = [
     category: "Cosmetic Dentistry",
     readTime: "4 min read",
     images: [
-      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=200&auto=format&fit=crop"
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624588/Doctor_examining_patient_dental___202607100040_y3pdpt.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624586/View__A_portrait_photograph__3_4_202607100035_acwyqp.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_treatment_bay_with_chair_202607100040_lfxztz.jpg"
     ],
     content: `Cosmetic dentistry is far more than a collection of aesthetic treatments; it is a highly specialized clinical discipline that combines the physics of light, the chemistry of modern ceramic materials, and the biological principles of periodontal health. Smile design is a structured methodology used to analyze, diagnose, and construct visually harmonious smiles that complement an individual's unique facial features. 
 
@@ -32,9 +32,9 @@ Furthermore, periodontal aesthetics are crucial. A visual smile design must addr
     category: "Orthodontics",
     readTime: "5 min read",
     images: [
-      "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1512224855767-d8c9f5ae8f4e?q=80&w=200&auto=format&fit=crop"
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624586/View__A_portrait_photograph__3_4_202607100035_acwyqp.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Patient_completing_paperwork_at___202607100036_f3on1u.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_treatment_bay_with_chair_202607100040_lfxztz.jpg"
     ],
     content: `Orthodontic treatment has evolved from rigid metal wires to highly predictable clear aligner therapy. Invisalign represents a breakthrough in digital biomechanics, allowing dentists to resolve complex malocclusions with minimal impact on a patient's lifestyle. The core of this system is SmartTrack material, a proprietary medical-grade thermoplastic engineered to deliver constant, gentle orthodontic forces to the dentition.
 
@@ -50,9 +50,9 @@ Compliance is a critical factor in Invisalign success. Aligners must be worn for
     category: "Endodontics",
     readTime: "4 min read",
     images: [
-      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1504813184591-015556c5c50f?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=200&auto=format&fit=crop"
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624588/Doctor_examining_patient_dental___202607100040_y3pdpt.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783538213/Modern_dental_operatory_interior__2K_202607090041_ukinvc.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_assistant_loading_autoclave_2K_202607100035_pxbzlr.jpg"
     ],
     content: `Root canal therapy is one of the most misunderstood procedures in dentistry, often associated with pain. However, modern endodontic techniques, high-powered surgical microscopes, and advanced sedation options have transformed this procedure into a precise, comfortable, and highly successful method for saving infected teeth. Endodontic therapy addresses inflammation or infection within the pulp tissue, which contains the nerves and blood vessels of the tooth.
 
@@ -68,9 +68,9 @@ Once sterile, the canals are obturated—or sealed—using a biocompatible mater
     category: "Anesthesiology",
     readTime: "5 min read",
     images: [
-      "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?q=80&w=200&auto=format&fit=crop"
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624588/Doctor_examining_patient_dental___202607100040_y3pdpt.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624586/View__A_portrait_photograph__3_4_202607100035_acwyqp.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Patient_completing_paperwork_at___202607100036_f3on1u.jpg"
     ],
     content: `Dental phobia is a significant barrier to oral health, causing millions of individuals to avoid essential treatment. Neuromuscular oral conscious sedation is a highly effective pharmacological approach designed to eliminate fear, suppress overactive gag reflexes, and create a calm state during complex dental procedures. Unlike general anesthesia, oral sedation keeps the patient conscious, cooperative, and able to respond to verbal cues.
 
@@ -86,9 +86,9 @@ Additionally, oral sedation allows for "treatment consolidation," where multiple
     category: "Preventative Dentistry",
     readTime: "4 min read",
     images: [
-      "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=200&auto=format&fit=crop"
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Patient_completing_paperwork_at___202607100036_f3on1u.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_treatment_bay_with_chair_202607100040_lfxztz.jpg",
+      "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_assistant_loading_autoclave_2K_202607100035_pxbzlr.jpg"
     ],
     content: `Preventative bio-telemetry mapping represents the future of preventative dentistry. Rather than waiting for dental structures to break, decay, or become painful, this digital methodology utilizes force-sensing sensors and structural telemetry to analyze bite forces and protect enamel integrity. By identifying micro-friction points and stress zones, dentists can intervene before structural damage occurs.
 

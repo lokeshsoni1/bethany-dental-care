@@ -55,28 +55,28 @@ const team = [
     name: "Dr. Michael Chang, DDS",
     title: "Lead Orthodontics Specialist",
     degree: "Harvard School of Dental Medicine",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=300&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624588/Doctor_examining_patient_dental___202607100040_y3pdpt.jpg",
     featured: false
   },
   {
     name: "Dr. Elena Rostova, DMD",
     title: "Precision Endodontics Operator",
     degree: "Penn Dental Medicine",
-    image: "https://images.unsplash.com/photo-1594824813573-246434de83fb?q=80&w=300&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624586/View__A_portrait_photograph__3_4_202607100035_acwyqp.jpg",
     featured: false
   },
   {
     name: "Dr. Yasmin Al-Fayed, DDS",
     title: "Periodontal & Biomaterial Specialist",
     degree: "NYU College of Dentistry",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Patient_completing_paperwork_at___202607100036_f3on1u.jpg",
     featured: false
   },
   {
     name: "Dr. Marcus Brody, DDS",
     title: "Oral & Maxillofacial Surgeon",
     degree: "Columbia University Dental Medicine",
-    image: "https://images.unsplash.com/photo-1622902046580-2b47f47f0471?q=80&w=300&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_assistant_loading_autoclave_2K_202607100035_pxbzlr.jpg",
     featured: false
   }
 ];
@@ -236,6 +236,9 @@ export default function AboutPage() {
           backgroundPosition: "center",
         }}
       >
+        {/* Hardware-accelerated 3% backdrop blur opacity filter */}
+        <div className="absolute inset-0 bg-black/10 backdrop-blur-[3px] pointer-events-none z-0 transform-gpu" />
+        
         <div className="container mx-auto container-gutter relative z-10">
           <h2 className="text-2xl sm:text-4xl font-bold text-center text-white mb-4">Our Clinical Specialist Team</h2>
           <p className="text-center text-slate-300 max-w-xl mx-auto mb-16 text-sm sm:text-base">

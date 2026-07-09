@@ -34,48 +34,53 @@ export function InfiniteServicesSlider() {
       id: "92%",
       title: "Comfort & Care Protocols",
       desc: "Our exclusive sedation and clinical behavior architecture ensures patients feel absolute zero anxiety during visits.",
-      img: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop",
+      img: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624588/Doctor_examining_patient_dental___202607100040_y3pdpt.jpg",
       icon: <Sparkles className="h-5 w-5 text-cyan-400" />
     },
     {
       id: "24/7",
       title: "Emergency Dental Infrastructure",
       desc: "Experiencing sudden acute pain or cosmetic injury? Our specialized Manhattan emergency response team is standing by.",
-      img: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=600&auto=format&fit=crop",
+      img: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_treatment_bay_with_chair_202607100040_lfxztz.jpg",
       icon: <ShieldAlert className="h-5 w-5 text-rose-400" />
     },
     {
       id: "7 Min",
       title: "Rapid Access Architecture",
       desc: "Zero waiting room fatigue. Our precision scheduling pipeline locks average wait times strictly under 7 minutes.",
-      img: "https://images.unsplash.com/photo-1579684389782-64d84b5e901a?q=80&w=600&auto=format&fit=crop",
+      img: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Patient_completing_paperwork_at___202607100036_f3on1u.jpg",
       icon: <Clock className="h-5 w-5 text-emerald-400" />
     },
     {
       id: "3/4",
       title: "Community Endorsed Excellence",
       desc: "Three out of every four new patients choose our Rockefeller Center suite via organic word-of-mouth professional referrals.",
-      img: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=600&auto=format&fit=crop",
+      img: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624586/View__A_portrait_photograph__3_4_202607100035_acwyqp.jpg",
       icon: <HeartPulse className="h-5 w-5 text-blue-400" />
     },
     {
       id: "85%",
       title: "Advanced Healthy Habits Mapping",
       desc: "Deploying high-tech bio-tracking and preventative diagnostic telemetry to keep our corporate community ahead of dental friction.",
-      img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop",
+      img: "https://res.cloudinary.com/dbpdexty8/image/upload/v1783624587/Dental_assistant_loading_autoclave_2K_202607100035_pxbzlr.jpg",
       icon: <Activity className="h-5 w-5 text-indigo-400" />
     }
   ];
 
   return (
-    <div className="w-full py-20 lg:py-32 bg-sky-50/70 overflow-hidden border-t border-sky-100">
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl">
+    <div 
+      className="w-full py-20 lg:py-32 overflow-hidden border-y border-white/10 relative z-10 bg-cover bg-center"
+      style={{
+        backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.4), rgba(9, 25, 44, 0.75)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632651/Luxury_dental_clinic_interior_2K_202607100300_flsexz.jpg')",
+      }}
+    >
+      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         <div className="flex flex-col gap-10">
           
           {/* Dynamic Core Header Section */}
           <div className="flex flex-col space-y-2 items-center text-center">
-            <h2 className="text-3xl md:text-5xl lg:text-6xl tracking-tighter font-bold text-zinc-900 max-w-4xl leading-[1.15]">
-              Redefining Dental Excellence <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 block sm:inline">Through Trust and Clinical Innovation.</span>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl tracking-tighter font-bold text-white max-w-4xl leading-[1.15]">
+              Redefining Dental Excellence <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-sky-300 to-indigo-300 block sm:inline">Through Trust and Clinical Innovation.</span>
             </h2>
           </div>
           
@@ -85,7 +90,7 @@ export function InfiniteServicesSlider() {
               {servicesData.map((service) => (
                 <CarouselItem key={service.id} className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 transform-gpu">
                   <div 
-                    className="group flex flex-col justify-end rounded-2xl aspect-[3/4] bg-cover bg-center relative overflow-hidden border border-white/5 shadow-2xl transition-all duration-500 hover:border-cyan-500/30 hover:scale-[1.02]"
+                    className="group flex flex-col justify-end rounded-2xl aspect-[3/4] bg-cover bg-center relative overflow-hidden border border-white/10 shadow-2xl transition-all duration-500 hover:border-cyan-400/50 hover:scale-[1.02] transform-gpu will-change-transform"
                     style={{ backgroundImage: `url(${service.img})` }}
                   >
                     {/* Shadow Layer Gradient to protect glass text visibility */}

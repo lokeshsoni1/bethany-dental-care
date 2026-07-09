@@ -28,6 +28,8 @@ import { TestimonialCard } from "@/components/testimonial-card";
 import { SectionHeading } from "@/components/section-heading";
 import { AnimatedCounter } from "@/components/animated-counter";
 import { Button } from "@/components/ui/button";
+import { PremiumIconButton } from "@/components/ui/button-with-icon";
+import { WhyChooseUsSection } from "@/components/sections/why-choose-us-stack";
 import {
   ambientFloat,
   fadeUp,
@@ -186,51 +188,7 @@ export default function HomePage() {
       <InfiniteServicesSlider />
 
       {/* Why Choose Us Section */}
-      <motion.section
-        variants={sectionStagger(0.08)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, margin: "-10% 0px" }}
-        className="section-padding bg-primary text-primary-foreground relative overflow-hidden"
-      >
-        {/* Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan rounded-full blur-3xl" />
-        </div>
-
-        <div className="container mx-auto container-gutter relative">
-          <SectionHeading
-            badge="Why Choose Us"
-            title="Healthcare You Can Trust"
-            description="At Bethany Dental Care, we combine dental excellence with genuine compassion to deliver oral care that truly makes a difference."
-            light
-          />
-
-          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {values.map((value, index) => (
-              <motion.div
-                key={value.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:scale-[1.04] hover:-translate-y-1.5 hover:bg-gradient-to-br hover:from-sky-500/10 hover:via-blue-600/5 hover:to-transparent transform-gpu will-change-transform shadow-lg"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center mx-auto mb-5">
-                  <value.icon className="w-8 h-8 text-accent" />
-                </div>
-                <h3 className="text-lg font-semibold mb-3 text-primary-foreground">
-                  {value.title}
-                </h3>
-                <p className="text-primary-foreground/70 text-sm leading-relaxed">
-                  {value.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </motion.section>
+      <WhyChooseUsSection />
 
       {/* Unified Operatory Section Wrapper */}
       <div 
@@ -277,7 +235,7 @@ export default function HomePage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.3 }}
-                  className="absolute -bottom-6 right-4 sm:-right-6 lg:right-6 bg-zinc-950/50 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 shadow-soft max-w-[240px] sm:max-w-[280px]"
+                  className="absolute -bottom-6 right-4 sm:-right-6 lg:right-6 bg-zinc-950/50 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-6 max-w-[240px] sm:max-w-[280px]"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center">
@@ -317,7 +275,6 @@ export default function HomePage() {
                   border: "1px solid rgba(255, 255, 255, 0.15)",
                   borderRadius: "24px",
                   padding: "2.5rem",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                 }}
               >
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-semibold tracking-wide uppercase text-white mb-4">
@@ -416,15 +373,6 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              style={{
-                background: "rgba(255, 255, 255, 0.08)",
-                backdropFilter: "blur(16px)",
-                WebkitBackdropFilter: "blur(16px)",
-                border: "1px solid rgba(255, 255, 255, 0.15)",
-                borderRadius: "24px",
-                padding: "2.5rem",
-                boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-              }}
               className="relative overflow-hidden"
             >
               {/* Background Glows */}
@@ -441,25 +389,21 @@ export default function HomePage() {
                   Schedule your consultation today and take the first step towards
                   better oral health.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-primary hover:bg-primary/95 text-white text-base px-8 w-full sm:w-auto"
-                  >
-                    <Link href="/book-appointment">
-                      <Calendar className="w-5 h-5 mr-2" />
-                      Book Appointment
-                    </Link>
-                  </Button>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                  <Link href="https://calendly.com/venzorx-co/30min">
+                    <PremiumIconButton 
+                      text="Book Appointment" 
+                      className="h-12 text-sm ps-6 pr-14 bg-white text-black hover:bg-zinc-100 hover:ps-14 hover:pr-6 border border-white/20"
+                    />
+                  </Link>
                   <Button
                     asChild
                     size="lg"
                     variant="outline"
-                    className="border-white/30 text-white hover:bg-white/10 text-base px-8 w-full sm:w-auto"
+                    className="border-white/40 text-white bg-transparent hover:bg-white hover:text-black text-sm h-12 rounded-full px-8 w-full sm:w-auto transition-all duration-300 transform-gpu hover:scale-[1.02] inline-flex items-center justify-center font-medium"
                   >
                     <Link href="tel:+12125550199">
-                      <Phone className="w-5 h-5 mr-2" />
+                      <Phone className="w-4 h-4 mr-2" />
                       Call Now
                     </Link>
                   </Button>
