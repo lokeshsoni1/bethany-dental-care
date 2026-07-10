@@ -414,26 +414,37 @@ export default function AboutPage() {
               const cardStart = idx * 0.28;
               const cardEnd = cardStart + 0.3;
 
+              const p1 = Math.min(cardStart + 0.08, 0.9);
+              const p2 = Math.min(cardEnd, 0.95);
+              const p3 = Math.min(cardEnd + 0.08, 1.0);
+
               const y = useTransform(
                 careerScrollProgress,
-                [0, cardStart, Math.min(cardStart + 0.08, 1), Math.min(cardEnd, 1), Math.min(cardEnd + 0.08, 1)],
+                [0, cardStart, p1, p2, p3],
                 ["300px", "300px", "0px", "0px", "-20px"]
               );
 
               // active is scale 1.05 and opacity 1, filter blur 0px. alternate is scale 0.95, opacity 0.2, filter blur 2px
+              const t1 = Math.max(0, cardStart - 0.05);
+              const t2 = cardStart;
+              const t3 = Math.min(cardStart + 0.08, 0.9);
+              const t4 = Math.min(cardEnd, 0.95);
+              const t5 = Math.min(cardEnd + 0.05, 1.0);
+
+              // Ensure array indices are uniquely sorted to prevent Framer Motion runtime errors
               const scale = useTransform(
                 careerScrollProgress,
-                [0, cardStart - 0.05, cardStart, Math.min(cardStart + 0.08, 1), Math.min(cardEnd, 1), Math.min(cardEnd + 0.05, 1)],
+                [0, t1, t2, t3, t4, t5],
                 [0.95, 0.95, 1.05, 1.05, 0.95, 0.95]
               );
               const opacity = useTransform(
                 careerScrollProgress,
-                [0, cardStart - 0.05, cardStart, Math.min(cardStart + 0.08, 1), Math.min(cardEnd, 1), Math.min(cardEnd + 0.05, 1)],
+                [0, t1, t2, t3, t4, t5],
                 [0.2, 0.2, 1, 1, 0.2, 0.2]
               );
               const filter = useTransform(
                 careerScrollProgress,
-                [0, cardStart - 0.05, cardStart, Math.min(cardStart + 0.08, 1), Math.min(cardEnd, 1), Math.min(cardEnd + 0.05, 1)],
+                [0, t1, t2, t3, t4, t5],
                 ["blur(2px)", "blur(2px)", "blur(0px)", "blur(0px)", "blur(2px)", "blur(2px)"]
               );
 

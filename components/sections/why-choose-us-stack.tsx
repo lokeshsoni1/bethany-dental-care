@@ -82,21 +82,25 @@ export function WhyChooseUsSection() {
                 const startProgress = index * 0.22;
                 const endProgress = startProgress + 0.22;
 
+                const p1 = Math.min(startProgress + 0.1, 0.9);
+                const p2 = Math.min(endProgress, 0.95);
+                const p3 = Math.min(endProgress + 0.1, 1.0);
+
                 const y = useTransform(
                   scrollYProgress,
-                  [0, startProgress, Math.min(startProgress + 0.1, 1), Math.min(endProgress, 1), Math.min(endProgress + 0.1, 1)],
+                  [0, startProgress, p1, p2, p3],
                   ["80vh", "80vh", "0px", "0px", "-20px"]
                 );
 
                 const scale = useTransform(
                   scrollYProgress,
-                  [0, startProgress, Math.min(startProgress + 0.1, 1), Math.min(endProgress, 1), Math.min(endProgress + 0.1, 1)],
+                  [0, startProgress, p1, p2, p3],
                   [0.9, 0.9, 1, 1, 0.94]
                 );
 
                 const opacity = useTransform(
                   scrollYProgress,
-                  [0, startProgress, Math.min(startProgress + 0.1, 1), Math.min(endProgress, 1), Math.min(endProgress + 0.1, 1)],
+                  [0, startProgress, p1, p2, p3],
                   [0, 0, 1, 1, 0.5]
                 );
 
