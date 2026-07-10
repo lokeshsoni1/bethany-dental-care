@@ -76,49 +76,50 @@ export default function BookAppointmentPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect to Calendly confirmation target pipeline
-    window.location.href = "https://calendly.com/venzorx-co/30min";
+    const encodedText = encodeURIComponent(`Hi Venzorx, my name is ${formData.name}. My email is ${formData.email} and phone is ${formData.phone}. I just saw the Bethany Dental Care website and I am highly interested in knowing more about getting a premium website like this! Additional context: ${formData.notes}`);
+    window.open(`https://wa.me/918595598458?text=${encodedText}`, '_blank');
   };
 
   return (
-    <main className="min-h-screen">
+    <main 
+      className="min-h-screen bg-cover bg-center bg-fixed relative overflow-hidden"
+      style={{
+        backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.45), rgba(9, 25, 44, 0.45)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632651/Luxury_dental_clinic_interior_2K_202607100300_flsexz.jpg')"
+      }}
+    >
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-36 lg:pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="container mx-auto container-gutter relative">
-          <div className="max-w-4xl">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-xs font-medium tracking-wide uppercase text-primary mb-6"
-            >
+      <section className="relative pt-36 pb-12 overflow-hidden bg-transparent z-10">
+        <div className="container mx-auto container-gutter relative text-center flex flex-col items-center justify-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{
+              background: "rgba(255, 255, 255, 0.25)",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              border: "2px solid rgba(255, 255, 255, 0.45)",
+              borderRadius: "24px",
+              padding: "3rem",
+              boxShadow: "0 35px 70px -15px rgba(9, 25, 44, 0.25)"
+            }}
+            className="max-w-4xl transform-gpu text-[#0f172a]"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#0f172a]/10 text-xs font-black tracking-wide uppercase text-[#0f172a] mb-6 backdrop-blur-md">
               Book Appointment
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 sm:mb-6"
-            >
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-6">
               Schedule Your
               <br />
-              <span className="text-gradient">Consultation</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
-            >
+              <span className="text-sky-700">Consultation</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-800 max-w-2xl leading-relaxed mx-auto font-semibold">
               Book your appointment with Bethany Dental Care in just a few clicks.
               Choose your preferred service, date, and time.
-            </motion.p>
-          </div>
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -369,9 +370,9 @@ export default function BookAppointmentPage() {
                   size="sm"
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                 >
-                  <Link href="tel:+12125550199">
+                  <Link href="https://wa.me/918595598458?text=Hi%2C%20I%20want%20my%20website%20to%20be%20generated%20like%20bethany%20dental%20care">
                     <Phone className="w-4 h-4 mr-2" />
-                    +1 (212) 555-0199
+                    +91 8595598458
                   </Link>
                 </Button>
               </div>

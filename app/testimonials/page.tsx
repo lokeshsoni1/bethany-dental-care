@@ -236,7 +236,7 @@ export default function TestimonialsPage() {
                 size="lg"
                 className="glass-dark text-primary-foreground shadow-glow w-full sm:w-auto"
               >
-                <Link href="/book-appointment">
+                <Link href="https://calendly.com/venzorx-co/30min">
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
                 </Link>

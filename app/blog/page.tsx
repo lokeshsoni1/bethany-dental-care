@@ -107,7 +107,12 @@ Furthermore, bio-telemetry mapping is invaluable for patients receiving restorat
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[#09192c] text-white">
+    <main 
+      className="min-h-screen bg-cover bg-center bg-fixed relative overflow-hidden"
+      style={{
+        backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.35), rgba(9, 25, 44, 0.35)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632651/Luxury_dental_clinic_interior_2K_202607100300_flsexz.jpg')"
+      }}
+    >
       <Navbar />
 
       {/* Hero Section */}
@@ -136,17 +141,28 @@ export default function BlogPage() {
           <div className="space-y-8">
             {articles.map((article) => {
               return (
-                <div 
+                <motion.div 
                   key={article.id}
-                  style={{
-                    background: "rgba(255, 255, 255, 0.07)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255, 255, 255, 0.18)",
-                    borderRadius: "28px",
-                    boxShadow: "0 30px 60px rgba(0,0,0,0.3)"
+                  animate={{ y: [0, -6, 0] }}
+                  whileHover={{ scale: 1.03, y: -10 }}
+                  transition={{
+                    y: {
+                      duration: 4.8,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: { type: "spring", stiffness: 300, damping: 20 }
                   }}
-                  className="p-8 flex flex-col md:flex-row items-center justify-between gap-8 transform-gpu shadow-2xl backdrop-blur-xl"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255, 253, 250, 0.8), rgba(250, 245, 235, 0.65))",
+                    backdropFilter: "blur(28px)",
+                    WebkitBackdropFilter: "blur(28px)",
+                    border: "2px solid rgba(255, 255, 255, 0.5)",
+                    borderRadius: "20px",
+                    boxShadow: "0 20px 45px rgba(9, 25, 44, 0.15)",
+                    willChange: "transform, opacity, backdrop-filter"
+                  }}
+                  className="p-8 flex flex-col md:flex-row items-center justify-between gap-8 transform-gpu shadow-2xl"
                 >
                   <div className="w-full md:w-1/3 aspect-video md:aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0">
                     <img 
@@ -155,33 +171,33 @@ export default function BlogPage() {
                       className="w-full h-full object-cover object-center rounded-xl"
                     />
                   </div>
-                  <div className="flex flex-col space-y-4 flex-grow text-white">
+                  <div className="flex flex-col space-y-4 flex-grow text-[#09192c]">
                     <div className="flex items-center justify-between gap-4">
-                      <span className="px-3.5 py-1.5 rounded-full bg-cyan-500/20 text-xs font-extrabold text-cyan-300 uppercase tracking-wide">
+                      <span className="px-3.5 py-1.5 rounded-full bg-cyan-600/10 text-xs font-black text-cyan-700 uppercase tracking-wide border border-cyan-600/20">
                         {article.category}
                       </span>
-                      <span className="flex items-center gap-1.5 text-xs text-slate-300 font-semibold">
-                        <Clock className="w-3.5 h-3.5" />
+                      <span className="flex items-center gap-1.5 text-xs text-[#09192c] font-black">
+                        <Clock className="w-3.5 h-3.5 text-cyan-600" />
                         {article.readTime}
                       </span>
                     </div>
 
-                    <h2 className="text-2xl font-extrabold text-white leading-snug">
+                    <h2 className="text-2xl font-black text-[#09192c] leading-snug">
                       {article.title}
                     </h2>
 
-                    <p className="text-sm text-slate-200 leading-relaxed font-semibold line-clamp-3">
+                    <p className="text-sm text-slate-800 leading-relaxed font-bold line-clamp-3">
                       {article.content}
                     </p>
 
                     <Link 
                       href={`/blog/${article.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-extrabold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="inline-flex items-center gap-2 text-sm font-black text-cyan-700 hover:text-cyan-900 transition-colors"
                     >
                       Read Full Article <BookOpen className="w-4 h-4" />
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>

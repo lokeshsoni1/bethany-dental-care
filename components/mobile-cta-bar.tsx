@@ -9,14 +9,14 @@ export function MobileCtaBar() {
       <div className="container mx-auto container-gutter py-3">
         <div className="grid grid-cols-2 gap-3">
           <Link
-            href="/book-appointment"
+            href="https://calendly.com/venzorx-co/30min"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-soft"
           >
             <Calendar className="h-4 w-4" />
             Book Now
           </Link>
           <Link
-            href="tel:+12125550199"
+            href="https://wa.me/918595598458?text=Hi%2C%20I%20want%20my%20website%20to%20be%20generated%20like%20bethany%20dental%20care"
             className="inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-primary/20 bg-card px-4 text-sm font-semibold text-primary"
           >
             <Phone className="h-4 w-4" />

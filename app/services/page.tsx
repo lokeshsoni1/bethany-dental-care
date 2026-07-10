@@ -332,34 +332,34 @@ export default function ServicesPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             style={{
-              background: "rgba(9, 29, 54, 0.94)",
-              backdropFilter: "blur(28px)",
-              WebkitBackdropFilter: "blur(28px)",
-              border: "2px solid rgba(255, 255, 255, 0.2)",
+              background: "rgba(255, 255, 255, 0.22)",
+              backdropFilter: "blur(45px)",
+              WebkitBackdropFilter: "blur(45px)",
+              border: "2px solid rgba(255, 255, 255, 0.4)",
               borderRadius: "24px",
               padding: "3.5rem",
-              boxShadow: "0 40px 80px -20px rgba(0,0,0,0.5)",
+              boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.25)",
               willChange: "transform, opacity, backdrop-filter"
             }}
             className="max-w-3xl mx-auto transform-gpu"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-xs font-semibold tracking-wide uppercase text-white mb-6 backdrop-blur-md">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#0f172a]/10 text-xs font-black tracking-wide uppercase text-[#0f172a] mb-6 backdrop-blur-md">
               Get Started
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-white mb-6">
+            <h2 className="text-3xl sm:text-5xl font-black text-[#0f172a] mb-6">
               Ready to Schedule Your Visit?
             </h2>
-            <p className="text-base sm:text-lg text-slate-100 mb-8 sm:mb-10 font-bold">
+            <p className="text-base sm:text-lg text-slate-900 mb-8 sm:mb-10 font-bold">
               Book an appointment today and experience the difference of personalized, compassionate healthcare.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/book-appointment" className="w-full sm:w-auto">
+              <Link href="https://calendly.com/venzorx-co/30min" className="w-full sm:w-auto">
                 <PremiumIconButton 
                   text="Book Appointment" 
-                  className="w-full sm:w-fit h-12 text-sm justify-center bg-white text-black hover:bg-zinc-100"
+                  className="w-full sm:w-fit h-12 text-sm justify-center bg-sky-600 text-white hover:bg-sky-700"
                 />
               </Link>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-md border border-white/20 text-white hover:bg-white/25 h-12 rounded-full w-full sm:w-auto font-bold px-8 shadow-sm">
+              <Button asChild size="lg" variant="outline" className="bg-[#0f172a]/10 border border-[#0f172a]/20 text-[#0f172a] hover:bg-[#0f172a]/20 h-12 rounded-full w-full sm:w-auto font-black px-8 shadow-sm">
                 <Link href="tel:+12125550199">
                   <Phone className="w-5 h-5 mr-2" />
                   Call: (212) 555-0199

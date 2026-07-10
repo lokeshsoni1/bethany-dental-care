@@ -69,110 +69,128 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ type: selectedType, ...formData });
+    const encodedContactText = encodeURIComponent(`Hi Venzorx, my name is ${formData.name}. I am inquiring about ${selectedType}. Reach me at ${formData.email} / ${formData.phone}. I just checked the Bethany Dental Care interface layout and want to get a similar system generated for my practice. Message: ${formData.message}`);
+    window.open(`https://wa.me/918595598458?text=${encodedContactText}`, '_blank');
   };
 
   return (
-    <main className="min-h-screen">
+    <main 
+      className="min-h-screen bg-cover bg-center bg-fixed relative overflow-hidden"
+      style={{
+        backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.45), rgba(9, 25, 44, 0.45)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632651/Luxury_dental_clinic_interior_2K_202607100300_flsexz.jpg')"
+      }}
+    >
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-10 sm:pt-28 sm:pb-12 lg:pt-36 lg:pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="container mx-auto container-gutter relative">
-          <div className="max-w-4xl">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-xs font-medium tracking-wide uppercase text-primary mb-6"
-            >
+      <section className="relative pt-36 pb-12 overflow-hidden z-10 bg-transparent">
+        <div className="container mx-auto container-gutter relative text-center flex flex-col items-center justify-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            style={{
+              background: "rgba(255, 255, 255, 0.25)",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              border: "2px solid rgba(255, 255, 255, 0.45)",
+              borderRadius: "24px",
+              padding: "3rem",
+              boxShadow: "0 35px 70px -15px rgba(9, 25, 44, 0.25)"
+            }}
+            className="max-w-4xl transform-gpu text-[#0f172a]"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#0f172a]/10 text-xs font-black tracking-wide uppercase text-[#0f172a] mb-6 backdrop-blur-md">
               Contact Us
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 sm:mb-6"
-            >
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-6">
               Get in Touch
               <br />
-              <span className="text-gradient">We&apos;re Here to Help</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed"
-            >
+              <span className="text-sky-700">We&apos;re Here to Help</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-slate-800 max-w-2xl leading-relaxed mx-auto font-semibold">
               Have questions or need assistance? Reach out to us through any of
               our premium operatory suites in NYC.
-            </motion.p>
-          </div>
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Interactive Branch Carousel */}
-      <section className="py-10 sm:py-12 bg-muted/20 relative overflow-hidden">
+      <section className="py-12 bg-transparent relative overflow-hidden z-10">
         <div className="container mx-auto container-gutter max-w-4xl">
-          <h2 className="text-xl sm:text-3xl font-bold text-center text-foreground mb-10">
-            Our Elite NYC Branches
-          </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{
+              background: "rgba(255, 255, 255, 0.25)",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              border: "2px solid rgba(255, 255, 255, 0.45)",
+              borderRadius: "24px",
+              padding: "3rem",
+              boxShadow: "0 35px 70px -15px rgba(9, 25, 44, 0.25)"
+            }}
+            className="transform-gpu"
+          >
+            <h2 className="text-xl sm:text-3xl font-black text-center text-[#0f172a] mb-10">
+              Our Elite NYC Branches
+            </h2>
 
-          <div className="relative h-[280px] sm:h-[220px] w-full flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeBranch}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5, ease: "easeInOut" }}
-                className="w-full max-w-2xl bg-card border border-primary/20 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 shadow-soft transform-gpu will-change-transform relative z-10"
-              >
-                <div className="flex-1 space-y-4">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">
-                    {branches[activeBranch].name}
-                  </h3>
-                  <div className="space-y-2">
-                    <p className="flex items-center gap-2 text-sm font-semibold text-slate-800 dark:text-slate-200">
-                      <MapPin className="w-4 h-4 text-sky-500 shrink-0" />
-                      {branches[activeBranch].address}
-                    </p>
-                    <p className="flex items-center gap-2 text-sm font-semibold text-slate-800 dark:text-slate-200">
-                      <Phone className="w-4 h-4 text-sky-500 shrink-0" />
-                      {branches[activeBranch].phone}
-                    </p>
-                    <p className="flex items-center gap-2 text-xs font-medium text-slate-600 dark:text-slate-400">
-                      <Clock className="w-4 h-4 text-teal-500 shrink-0" />
-                      {branches[activeBranch].hours}
-                    </p>
+            <div className="relative h-[320px] sm:h-[240px] w-full flex items-center justify-center">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeBranch}
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -50 }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  className="w-full max-w-2xl bg-white/70 border border-white/40 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 shadow-soft transform-gpu will-change-transform relative z-10"
+                >
+                  <div className="flex-1 space-y-4">
+                    <h3 className="text-xl font-black text-[#0f172a]">
+                      {branches[activeBranch].name}
+                    </h3>
+                    <div className="space-y-2">
+                      <p className="flex items-center gap-2 text-sm font-extrabold text-slate-800">
+                        <MapPin className="w-4 h-4 text-sky-600 shrink-0" />
+                        {branches[activeBranch].address}
+                      </p>
+                      <p className="flex items-center gap-2 text-sm font-extrabold text-slate-800">
+                        <Phone className="w-4 h-4 text-sky-600 shrink-0" />
+                        +91 8595598458
+                      </p>
+                      <p className="flex items-center gap-2 text-xs font-black text-slate-700">
+                        <Clock className="w-4 h-4 text-teal-600 shrink-0" />
+                        {branches[activeBranch].hours}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                
-                <Link href="/book-appointment">
-                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-2.5 rounded-full cursor-pointer whitespace-nowrap">
-                    Book Here <ArrowRight className="w-4 h-4 ml-1" />
-                  </Button>
-                </Link>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+                  
+                  <Link href="https://calendly.com/venzorx-co/30min">
+                    <Button className="bg-[#0f172a] hover:bg-[#0f172a]/90 text-white font-bold px-6 py-2.5 rounded-full cursor-pointer whitespace-nowrap">
+                      Book Here <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </Link>
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-          {/* Indicators */}
-          <div className="flex justify-center gap-2.5 mt-8">
-            {branches.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveBranch(i)}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
-                  activeBranch === i ? "w-8 bg-primary" : "w-2.5 bg-slate-300 dark:bg-slate-700"
-                }`}
-                aria-label={`Slide ${i + 1}`}
-              />
-            ))}
-          </div>
+            {/* Indicators */}
+            <div className="flex justify-center gap-2.5 mt-8">
+              {branches.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveBranch(i)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    activeBranch === i ? "w-8 bg-[#0f172a]" : "w-2.5 bg-slate-400"
+                  }`}
+                  aria-label={`Slide ${i + 1}`}
+                />
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 

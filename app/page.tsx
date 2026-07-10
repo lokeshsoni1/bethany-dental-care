@@ -408,7 +408,7 @@ export default function HomePage() {
                     }}
                     className="hover:bg-[#0f172a] hover:text-white text-sm h-12 rounded-full px-8 w-full sm:w-auto transform-gpu hover:scale-[1.02] inline-flex items-center justify-center transition-all duration-300 will-change-[transform,opacity]"
                   >
-                    <Link href="tel:+12125550199">
+                    <Link href="https://wa.me/918595598458?text=Hi%2C%20I%20want%20my%20website%20to%20be%20generated%20like%20bethany%20dental%20care">
                       <Phone className="w-4 h-4 mr-2" />
                       Call Now
                     </Link>

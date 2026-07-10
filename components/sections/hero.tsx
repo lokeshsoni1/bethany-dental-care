@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { CalendarDays, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 // Production Cloudinary CDN Image Registry Array Map
 const CDN_SLIDESHOW_RESOURCES = [
@@ -64,10 +65,10 @@ export default function CloudinarySlideshowMinimalHero() {
 
         {/* Dual CTA Button Triggers Node Layout */}
         <div className="flex flex-wrap gap-4 items-center mb-16">
-          <button className="flex items-center space-x-2 bg-cyan-500 hover:bg-cyan-600 text-black text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all duration-300 transform-gpu hover:scale-[1.02]">
+          <Link href="https://calendly.com/venzorx-co/30min" className="flex items-center space-x-2 bg-cyan-500 hover:bg-cyan-600 text-black text-sm font-bold px-6 py-3.5 rounded-xl shadow-lg transition-all duration-300 transform-gpu hover:scale-[1.02]">
             <CalendarDays className="h-4 w-4 stroke-[2.5]"/>
             <span>Book Appointment</span>
-          </button>
+          </Link>
           
           <button className="flex items-center space-x-2 bg-white/20 backdrop-blur-md border border-white/20 hover:bg-white/30 text-white text-sm font-semibold px-6 py-3.5 rounded-xl transition-all duration-300 shadow-sm">
             <span>Learn About Us</span>
