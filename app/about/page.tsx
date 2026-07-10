@@ -116,7 +116,6 @@ const credentials = [
 
 export default function AboutPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const careerRef = useRef<HTMLDivElement>(null);
   
   // Bidirectional Milestones Script: Re-engineer tracker logic dynamically on every continuous scroll change
   const { scrollYProgress } = useScroll({
@@ -134,12 +133,6 @@ export default function AboutPage() {
     }, 2500);
     return () => clearInterval(timer);
   }, []);
-
-  // Career scroll scaling stack hook
-  const { scrollYProgress: careerScrollProgress } = useScroll({
-    target: careerRef,
-    offset: ["start start", "end end"]
-  });
 
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
@@ -389,155 +382,100 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION D: Alternating Careers Matrix with Bidirectional Scroll Pinning (Module 2) */}
+      {/* SECTION D: Alternating Careers Matrix (Restored Standard Layout) */}
       <section 
-        ref={careerRef} 
-        className="relative w-full min-h-[300vh] bg-[#09192c] overflow-visible"
+        className="py-20 sm:py-32 bg-[#09192c] relative z-10 overflow-visible"
       >
-        <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-          
-          {/* Background biophilic asset */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <img 
-              src="https://res.cloudinary.com/dbpdexty8/image/upload/v1783632655/Biophilic_dental_clinic_interior__2K_202607100259_ml5l2w.jpg" 
-              alt="Biophilic Clinic" 
-              className="w-full h-full object-cover object-center"
-            />
+        <div className="container mx-auto container-gutter max-w-6xl relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">Join Our Practice</h2>
+            <p className="text-slate-300 text-sm sm:text-base">
+              We are looking for dedicated clinical specialists and support operators.
+            </p>
           </div>
 
-          <div className="container mx-auto container-gutter max-w-6xl relative z-10 w-full px-8">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">Join Our Practice</h2>
-              <p className="text-slate-300 text-sm sm:text-base">
-                We are looking for dedicated clinical specialists and support operators.
-              </p>
-            </div>
+          {/* Desktop alternating cards list */}
+          <div className="hidden lg:flex flex-col space-y-16">
+            {jobs.map((job, idx) => {
+              const isOdd = idx % 2 !== 0;
 
-            {/* Desktop Stack-and-Reveal Pinning Scrolling Engine (Viewport > 1024px) */}
-            <div className="hidden lg:block relative h-[500px] w-full flex items-center justify-center">
+              return (
+                <div
+                  key={idx}
+                  style={{
+                    background: "rgba(255, 255, 255, 0.08)",
+                    backdropFilter: "blur(24px)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                    borderRadius: "24px",
+                    willChange: "transform, opacity",
+                  }}
+                  className={`rounded-3xl p-8 flex flex-row items-center justify-between w-full gap-12 transform-gpu shadow-2xl transition-all duration-300 ${
+                    isOdd ? "flex-row-reverse" : "flex-row"
+                  }`}
+                >
+                  <div className="w-1/2 aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0">
+                    <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center rounded-xl" />
+                  </div>
+                  <div className="flex flex-col space-y-6 justify-between flex-grow text-white">
+                    <div>
+                      <h3 className="text-3xl font-extrabold text-white mb-2">{job.title}</h3>
+                      <p className="text-xs text-cyan-300 font-extrabold mb-4 tracking-wider uppercase">{job.type}</p>
+                      <p className="text-sm text-white leading-relaxed max-w-md font-medium">{job.description}</p>
+                    </div>
+                    <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                      <span className="text-lg font-extrabold text-white">{job.salary}</span>
+                      <Link href="/contact" className="text-sm font-extrabold text-white flex items-center gap-1 hover:underline">
+                        Apply Now <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Mobile Auto-Fade Spring Interval Transition Loop (Viewport <= 1024px) */}
+          <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center overflow-hidden">
+            <AnimatePresence mode="wait">
               {jobs.map((job, idx) => {
-                const isOdd = idx % 2 !== 0;
-
-                // Bind scaling and opacity stack hooks mathematically to track scroll path safely
-                const cardStart = idx * 0.28;
-                const cardEnd = cardStart + 0.28;
-
-                const p1 = Math.min(cardStart + 0.08, 0.9);
-                const p2 = Math.min(cardEnd, 0.95);
-                const p3 = Math.min(cardEnd + 0.08, 1.0);
-
-                const y = useTransform(
-                  careerScrollProgress,
-                  [0, cardStart, p1, p2, p3],
-                  ["80vh", "80vh", "0px", "0px", "-20px"]
-                );
-
-                const t1 = Math.max(0, cardStart - 0.05);
-                const t2 = cardStart;
-                const t3 = Math.min(cardStart + 0.08, 0.9);
-                const t4 = Math.min(cardEnd, 0.95);
-                const t5 = Math.min(cardEnd + 0.05, 1.0);
-
-                const scale = useTransform(
-                  careerScrollProgress,
-                  [0, t1, t2, t3, t4, t5],
-                  [0.95, 0.95, 1.0, 1.0, 0.94, 0.94]
-                );
-                const opacity = useTransform(
-                  careerScrollProgress,
-                  [0, t1, t2, t3, t4, t5],
-                  [0, 0, 1, 1, 0.15, 0.15]
-                );
-                const filter = useTransform(
-                  careerScrollProgress,
-                  [0, t1, t2, t3, t4, t5],
-                  ["blur(4px)", "blur(4px)", "blur(0px)", "blur(0px)", "blur(4px)", "blur(4px)"]
-                );
-
+                if (idx !== activeCareerIdx) return null;
                 return (
                   <motion.div
                     key={idx}
+                    initial={{ opacity: 0, scale: 0.94 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.94 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      y,
-                      scale,
-                      opacity,
-                      filter,
-                      background: "rgba(9, 29, 54, 0.94)",
-                      backdropFilter: "blur(30px)",
-                      WebkitBackdropFilter: "blur(30px)",
-                      border: "2px solid rgba(255, 255, 255, 0.15)",
-                      borderRadius: "24px",
-                      boxShadow: "0 40px 80px -20px rgba(0,0,0,0.5)",
-                      zIndex: idx + 1,
-                      willChange: "transform, opacity, filter, backdrop-filter"
+                      background: "rgba(255, 255, 255, 0.08)",
+                      backdropFilter: "blur(24px)",
+                      WebkitBackdropFilter: "blur(24px)",
+                      border: "1px solid rgba(255, 255, 255, 0.12)",
+                      willChange: "transform, opacity, backdrop-filter",
                     }}
-                    className={`absolute w-full max-w-4xl flex items-center justify-between gap-12 transform-gpu shadow-2xl backdrop-blur-xl p-10 ${
-                      isOdd ? "flex-row-reverse" : "flex-row"
-                    }`}
+                    className="absolute inset-0 flex flex-col p-6 rounded-3xl justify-between h-full transform-gpu"
                   >
-                    <div className="w-1/2 aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0">
-                      <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center rounded-xl" />
+                    <div className="w-full h-[200px] rounded-xl overflow-hidden bg-zinc-900 border border-white/5 mb-4 shrink-0">
+                      <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center" />
                     </div>
-                    <div className="flex flex-col space-y-6 justify-between flex-grow text-white">
+                    <div className="text-white flex-grow flex flex-col justify-between">
                       <div>
-                        <h3 className="text-3xl font-extrabold text-white mb-2">{job.title}</h3>
-                        <p className="text-xs text-cyan-300 font-extrabold mb-4 tracking-wider uppercase">{job.type}</p>
-                        <p className="text-sm text-white leading-relaxed max-w-md font-extrabold">{job.description}</p>
+                        <h3 className="text-xl font-bold mb-1 text-white">{job.title}</h3>
+                        <p className="text-xs text-cyan-300 font-semibold mb-3">{job.type}</p>
+                        <p className="text-xs text-white leading-relaxed line-clamp-3 font-medium">{job.description}</p>
                       </div>
-                      <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                        <span className="text-lg font-extrabold text-white">{job.salary}</span>
-                        <Link href="/contact" className="text-sm font-extrabold text-white flex items-center gap-1 hover:underline">
-                          Apply Now <ArrowRight className="w-4 h-4" />
+                      <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4">
+                        <span className="text-sm font-bold text-white">{job.salary}</span>
+                        <Link href="/contact" className="text-xs font-bold text-white flex items-center gap-1 hover:underline">
+                          Apply <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
                     </div>
                   </motion.div>
                 );
               })}
-            </div>
-
-            {/* Mobile Auto-Fade Spring Interval Transition Loop (Viewport <= 1024px) */}
-            <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center overflow-hidden">
-              <AnimatePresence mode="wait">
-                {jobs.map((job, idx) => {
-                  if (idx !== activeCareerIdx) return null;
-                  return (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, scale: 0.94 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.94 }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      style={{
-                        background: "rgba(9, 29, 54, 0.94)",
-                        backdropFilter: "blur(30px)",
-                        WebkitBackdropFilter: "blur(30px)",
-                        border: "2px solid rgba(255, 255, 255, 0.15)",
-                        willChange: "transform, opacity, backdrop-filter",
-                      }}
-                      className="absolute inset-0 flex flex-col p-6 rounded-3xl justify-between h-full transform-gpu"
-                    >
-                      <div className="w-full h-[200px] rounded-xl overflow-hidden bg-zinc-900 border border-white/5 mb-4 shrink-0">
-                        <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center" />
-                      </div>
-                      <div className="text-white flex-grow flex flex-col justify-between">
-                        <div>
-                          <h3 className="text-xl font-bold mb-1 text-white">{job.title}</h3>
-                          <p className="text-xs text-cyan-300 font-semibold mb-3">{job.type}</p>
-                          <p className="text-xs text-white leading-relaxed line-clamp-3 font-extrabold">{job.description}</p>
-                        </div>
-                        <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4">
-                          <span className="text-sm font-bold text-white">{job.salary}</span>
-                          <Link href="/contact" className="text-xs font-bold text-white flex items-center gap-1 hover:underline">
-                            Apply <ArrowRight className="w-3.5 h-3.5" />
-                          </Link>
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </AnimatePresence>
-            </div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
