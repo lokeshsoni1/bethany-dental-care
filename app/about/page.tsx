@@ -400,17 +400,33 @@ export default function AboutPage() {
               const isOdd = idx % 2 !== 0;
 
               return (
-                <div
+                <motion.div
                   key={idx}
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{
+                    y: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: idx * 0.4,
+                    }
+                  }}
+                  whileHover={{
+                    scale: 1.03,
+                    y: -12,
+                    borderColor: "rgba(14, 165, 233, 0.4)",
+                    boxShadow: "0 30px 60px rgba(14, 165, 233, 0.15)",
+                  }}
                   style={{
-                    background: "rgba(255, 255, 255, 0.08)",
-                    backdropFilter: "blur(24px)",
-                    WebkitBackdropFilter: "blur(24px)",
-                    border: "1px solid rgba(255, 255, 255, 0.12)",
+                    background: "rgba(255, 255, 255, 0.06)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255, 255, 255, 0.18)",
                     borderRadius: "24px",
+                    boxShadow: "0 20px 50px rgba(0, 0, 0, 0.3)",
                     willChange: "transform, opacity",
                   }}
-                  className={`rounded-3xl p-8 flex flex-row items-center justify-between w-full gap-12 transform-gpu shadow-2xl transition-all duration-300 ${
+                  className={`rounded-3xl p-8 flex flex-row items-center justify-between w-full gap-12 transform-gpu shadow-2xl transition-colors duration-300 ${
                     isOdd ? "flex-row-reverse" : "flex-row"
                   }`}
                 >
@@ -430,7 +446,7 @@ export default function AboutPage() {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
