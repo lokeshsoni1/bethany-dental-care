@@ -195,7 +195,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form & Map */}
-      <section className="py-10 sm:py-12 lg:py-20">
+      <section className="w-full bg-[#ffffff] text-slate-900 py-16 px-4 md:px-8 relative z-10">
         <div className="container mx-auto container-gutter">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20">
             {/* Form */}

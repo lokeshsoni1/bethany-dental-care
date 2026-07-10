@@ -124,7 +124,7 @@ export default function BookAppointmentPage() {
       </section>
 
       {/* Booking Form */}
-      <section className="py-10 sm:py-12 lg:py-20">
+      <section className="w-full bg-[#ffffff] text-slate-900 py-12 relative z-10">
         <div className="container mx-auto container-gutter">
           <div className="grid lg:grid-cols-3 gap-8 sm:gap-12">
             {/* Form */}
