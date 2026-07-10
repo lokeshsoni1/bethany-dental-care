@@ -86,41 +86,41 @@ export default function TestimonialsPage() {
     <main className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section (Biophilic backdrop & smoky white glass wrapper) */}
-      <section 
-        className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-4 py-20 overflow-visible z-10 bg-cover bg-center"
-        style={{
-          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.25), rgba(9, 25, 44, 0.25)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632655/Biophilic_dental_clinic_interior__2K_202607100259_ml5l2w.jpg')"
-        }}
-      >
-        <div className="container mx-auto container-gutter relative text-center z-10 overflow-visible">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ y: [0, -6, 0] }}
-            whileHover={{ scale: 1.015, y: -6 }}
-            transition={{
-              y: {
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              },
-              scale: { type: "spring", stiffness: 260, damping: 25 }
-            }}
-            className="relative z-50 w-full max-w-4xl mx-auto rounded-3xl bg-white/20 border-2 border-white/40 p-8 md:p-12 text-center shadow-[0_30px_60px_rgba(0,0,0,0.25)] backdrop-blur-[40px] -webkit-backdrop-filter: blur(40px) transform-gpu flex flex-col items-center justify-center text-white"
-          >
-            <span className="text-sm font-black tracking-[0.25em] text-cyan-200 uppercase block mb-4">
+      {/* Hero Section */}
+      <section className="relative hero-padding overflow-hidden bg-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl -translate-y-1/2" />
+
+        <div className="container mx-auto container-gutter relative">
+          <div className="max-w-4xl">
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-xs font-medium tracking-wide uppercase text-primary mb-6"
+            >
               Testimonials
-            </span>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+            </motion.span>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 sm:mb-6"
+            >
               What Our Patients
               <br />
-              Say About Us
-            </h1>
-            <p className="text-base md:text-lg font-medium text-white/95 max-w-2xl mx-auto leading-relaxed">
+              <span className="text-gradient">Say About Us</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-base sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+            >
               Real stories from real patients. Discover why thousands of
               professionals trust Bethany Dental Care for their elite oral healthcare needs.
-            </p>
-          </motion.div>
+            </motion.p>
+          </div>
         </div>
       </section>
 
