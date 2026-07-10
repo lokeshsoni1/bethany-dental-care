@@ -145,7 +145,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-background relative overflow-hidden">
       <Navbar />
 
-      {/* Hero Section & Background Swap (Module 10 / Module 1 Glassmorphic Box) */}
+      {/* Hero Section & Background Swap (Module 10 / Module 1 Silver Glass Box) */}
       <section 
         className="relative pt-32 pb-20 sm:pt-36 sm:pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-cover bg-center bg-fixed"
         style={{
@@ -158,13 +158,13 @@ export default function AboutPage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             style={{
-              background: "rgba(255, 255, 255, 0.07)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
-              borderRadius: "20px",
-              padding: "2.5rem",
-              boxShadow: "0 15px 35px rgba(0,0,0,0.15)",
+              background: "linear-gradient(135deg, rgba(240, 244, 250, 0.18), rgba(255, 255, 255, 0.08))",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              border: "2px solid rgba(255, 255, 255, 0.35)",
+              borderRadius: "28px",
+              padding: "3.5rem",
+              boxShadow: "0 30px 60px -15px rgba(9, 25, 44, 0.4)",
               willChange: "transform, opacity, backdrop-filter"
             }}
             className="max-w-4xl transform-gpu"
@@ -172,19 +172,19 @@ export default function AboutPage() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-xs font-semibold tracking-wide uppercase text-white mb-6 backdrop-blur-md">
               About Bethany Dental Care
             </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 drop-shadow-md">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 drop-shadow-md">
               Redefining Clinical
               <br />
               <span className="text-cyan-200">Dental Excellence</span>
             </h1>
-            <p className="text-lg sm:text-2xl text-slate-100 max-w-3xl leading-relaxed drop-shadow-md mx-auto font-medium">
+            <p className="text-lg sm:text-2xl text-white max-w-3xl leading-relaxed drop-shadow-md mx-auto font-bold">
               For over two decades, Bethany Dental Care has delivered elite oral healthcare and anxiety-free dentistry to the regional community.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SECTION A: Clinic Origins Narrative (Module 2 plant-wall continuation & frosted card shield) */}
+      {/* SECTION A: Clinic Origins Narrative (Module 1 Silver Glass & Origins plant wall continuation) */}
       <section 
         className="py-20 sm:py-28 relative z-10 bg-cover bg-center bg-fixed text-white border-b border-white/10"
         style={{
@@ -194,18 +194,18 @@ export default function AboutPage() {
         <div className="container mx-auto container-gutter max-w-4xl text-center">
           <div 
             style={{
-              background: "rgba(255, 255, 255, 0.08)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.15)",
-              borderRadius: "24px",
-              padding: "3rem",
-              boxShadow: "0 15px 35px rgba(0,0,0,0.15)",
+              background: "linear-gradient(135deg, rgba(240, 244, 250, 0.18), rgba(255, 255, 255, 0.08))",
+              backdropFilter: "blur(40px)",
+              WebkitBackdropFilter: "blur(40px)",
+              border: "2px solid rgba(255, 255, 255, 0.35)",
+              borderRadius: "28px",
+              padding: "3.5rem",
+              boxShadow: "0 30px 60px -15px rgba(9, 25, 44, 0.4)",
               willChange: "transform, opacity, backdrop-filter"
             }}
-            className="space-y-6 text-base sm:text-lg text-slate-200 leading-relaxed font-medium transform-gpu"
+            className="space-y-6 text-base sm:text-lg text-white leading-relaxed font-bold transform-gpu"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Our Origins & Vision</h2>
+            <h2 className="text-3xl sm:text-4xl font-black text-white mb-6">Our Origins & Vision</h2>
             <p>
               Bethany Dental Care was engineered over twenty years ago with a singular objective: to combine state-of-the-art digital dental mapping with a zero-anxiety clinical methodology. Located in the heart of Manhattan at 45 Rockefeller Plaza, our practice has grown from a single treatment room into a premier multi-disciplinary clinic serving thousands of professionals.
             </p>
@@ -389,154 +389,163 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* SECTION D: Alternating Careers Matrix with Bidirectional Scroll Active Pop Reveal (Module 4) */}
+      {/* SECTION D: Alternating Careers Matrix with Bidirectional Scroll Pinning (Module 2) */}
       <section 
         ref={careerRef} 
-        className="py-20 sm:py-32 bg-cover bg-center relative z-10 overflow-visible"
-        style={{
-          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.4), rgba(9, 25, 44, 0.4)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632655/Biophilic_dental_clinic_interior__2K_202607100259_ml5l2w.jpg')"
-        }}
+        className="relative w-full min-h-[350vh] bg-[#09192c] overflow-visible"
       >
-        <div className="container mx-auto container-gutter max-w-6xl relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">Join Our Practice</h2>
-            <p className="text-slate-300 text-sm sm:text-base">
-              We are looking for dedicated clinical specialists and support operators.
-            </p>
+        <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+          
+          {/* Background biophilic asset */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
+            <img 
+              src="https://res.cloudinary.com/dbpdexty8/image/upload/v1783632655/Biophilic_dental_clinic_interior__2K_202607100259_ml5l2w.jpg" 
+              alt="Biophilic Clinic" 
+              className="w-full h-full object-cover object-center"
+            />
           </div>
 
-          {/* Desktop Stack-and-Reveal Scrolling Engine (Viewport > 1024px) */}
-          <div className="hidden lg:flex flex-col space-y-24">
-            {jobs.map((job, idx) => {
-              const isOdd = idx % 2 !== 0;
+          <div className="container mx-auto container-gutter max-w-6xl relative z-10 w-full px-8">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4">Join Our Practice</h2>
+              <p className="text-slate-300 text-sm sm:text-base">
+                We are looking for dedicated clinical specialists and support operators.
+              </p>
+            </div>
 
-              // Bind scaling inputs to scroll progress for bidirectional pop reveal
-              const cardStart = idx * 0.28;
-              const cardEnd = cardStart + 0.3;
-
-              const p1 = Math.min(cardStart + 0.08, 0.9);
-              const p2 = Math.min(cardEnd, 0.95);
-              const p3 = Math.min(cardEnd + 0.08, 1.0);
-
-              const y = useTransform(
-                careerScrollProgress,
-                [0, cardStart, p1, p2, p3],
-                ["300px", "300px", "0px", "0px", "-20px"]
-              );
-
-              // active is scale 1.05 and opacity 1, filter blur 0px. alternate is scale 0.95, opacity 0.2, filter blur 2px
-              const t1 = Math.max(0, cardStart - 0.05);
-              const t2 = cardStart;
-              const t3 = Math.min(cardStart + 0.08, 0.9);
-              const t4 = Math.min(cardEnd, 0.95);
-              const t5 = Math.min(cardEnd + 0.05, 1.0);
-
-              // Ensure array indices are uniquely sorted to prevent Framer Motion runtime errors
-              const scale = useTransform(
-                careerScrollProgress,
-                [0, t1, t2, t3, t4, t5],
-                [0.95, 0.95, 1.05, 1.05, 0.95, 0.95]
-              );
-              const opacity = useTransform(
-                careerScrollProgress,
-                [0, t1, t2, t3, t4, t5],
-                [0.2, 0.2, 1, 1, 0.2, 0.2]
-              );
-              const filter = useTransform(
-                careerScrollProgress,
-                [0, t1, t2, t3, t4, t5],
-                ["blur(2px)", "blur(2px)", "blur(0px)", "blur(0px)", "blur(2px)", "blur(2px)"]
-              );
-
-              return (
-                <motion.div
-                  key={idx}
-                  style={{
-                    y,
-                    scale,
-                    opacity,
-                    filter,
-                    background: "rgba(245, 250, 255, 0.08)",
-                    backdropFilter: "blur(24px)",
-                    WebkitBackdropFilter: "blur(24px)",
-                    border: "1px solid rgba(245, 250, 255, 0.12)",
-                    willChange: "transform, opacity, filter, backdrop-filter",
-                    zIndex: idx + 1,
-                  }}
-                  className={`rounded-3xl p-8 flex flex-row items-center justify-between w-full gap-12 transform-gpu shadow-2xl ${
-                    isOdd ? "flex-row-reverse" : ""
-                  }`}
-                >
-                  <div className="w-1/2 h-[350px] rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0">
-                    <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center" />
-                  </div>
-                  <div className="flex flex-col space-y-6 justify-between flex-grow text-white">
-                    <div>
-                      <h3 className="text-3xl font-bold text-white mb-2">{job.title}</h3>
-                      <p className="text-xs text-cyan-300 font-semibold mb-4 tracking-wider uppercase">{job.type}</p>
-                      <p className="text-sm text-slate-200 leading-relaxed max-w-md">{job.description}</p>
-                    </div>
-                    <div className="pt-6 border-t border-white/10 flex items-center justify-between">
-                      <span className="text-lg font-bold text-white">{job.salary}</span>
-                      <Link href="/contact" className="text-sm font-bold text-cyan-400 flex items-center gap-1 hover:underline">
-                        Apply Now <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          {/* Mobile Auto-Fade Spring Interval Transition Loop (Viewport <= 1024px) */}
-          <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center overflow-hidden">
-            <AnimatePresence mode="wait">
+            {/* Desktop Stack-and-Reveal Pinning Scrolling Engine (Viewport > 1024px) */}
+            <div className="hidden lg:block relative h-[500px] w-full flex items-center justify-center">
               {jobs.map((job, idx) => {
-                if (idx !== activeCareerIdx) return null;
+                const isOdd = idx % 2 !== 0;
+
+                // Bind scaling and opacity stack hooks mathematically to track scroll path safely
+                const cardStart = idx * 0.28;
+                const cardEnd = cardStart + 0.28;
+
+                const p1 = Math.min(cardStart + 0.08, 0.9);
+                const p2 = Math.min(cardEnd, 0.95);
+                const p3 = Math.min(cardEnd + 0.08, 1.0);
+
+                const y = useTransform(
+                  careerScrollProgress,
+                  [0, cardStart, p1, p2, p3],
+                  ["80vh", "80vh", "0px", "0px", "-20px"]
+                );
+
+                const t1 = Math.max(0, cardStart - 0.05);
+                const t2 = cardStart;
+                const t3 = Math.min(cardStart + 0.08, 0.9);
+                const t4 = Math.min(cardEnd, 0.95);
+                const t5 = Math.min(cardEnd + 0.05, 1.0);
+
+                const scale = useTransform(
+                  careerScrollProgress,
+                  [0, t1, t2, t3, t4, t5],
+                  [0.95, 0.95, 1.05, 1.05, 0.95, 0.95]
+                );
+                const opacity = useTransform(
+                  careerScrollProgress,
+                  [0, t1, t2, t3, t4, t5],
+                  [0, 0, 1, 1, 0.2, 0.2]
+                );
+                const filter = useTransform(
+                  careerScrollProgress,
+                  [0, t1, t2, t3, t4, t5],
+                  ["blur(4px)", "blur(4px)", "blur(0px)", "blur(0px)", "blur(2px)", "blur(2px)"]
+                );
+
                 return (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.96 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      background: "rgba(245, 250, 255, 0.08)",
-                      backdropFilter: "blur(24px)",
-                      WebkitBackdropFilter: "blur(24px)",
-                      border: "1px solid rgba(245, 250, 255, 0.12)",
-                      willChange: "transform, opacity, backdrop-filter",
+                      y,
+                      scale,
+                      opacity,
+                      filter,
+                      background: "rgba(255, 255, 255, 0.12)",
+                      border: "1.5px solid rgba(255, 255, 255, 0.2)",
+                      borderRadius: "28px",
+                      padding: "2.5rem",
+                      zIndex: idx + 1,
+                      willChange: "transform, opacity, filter, backdrop-filter"
                     }}
-                    className="absolute inset-0 flex flex-col p-6 rounded-3xl justify-between h-full transform-gpu"
+                    className={`absolute w-full max-w-4xl flex flex-row items-center justify-between gap-12 transform-gpu shadow-2xl backdrop-blur-xl ${
+                      isOdd ? "flex-row-reverse" : ""
+                    }`}
                   >
-                    <div className="w-full h-[200px] rounded-xl overflow-hidden bg-zinc-900 border border-white/5 mb-4 shrink-0">
+                    <div className="w-1/2 h-[300px] rounded-2xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0">
                       <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center" />
                     </div>
-                    <div className="text-white flex-grow flex flex-col justify-between">
+                    <div className="flex flex-col space-y-6 justify-between flex-grow text-white">
                       <div>
-                        <h3 className="text-xl font-bold mb-1">{job.title}</h3>
-                        <p className="text-xs text-cyan-300 font-semibold mb-3">{job.type}</p>
-                        <p className="text-xs text-slate-200 leading-relaxed line-clamp-3">{job.description}</p>
+                        <h3 className="text-3xl font-black text-white mb-2">{job.title}</h3>
+                        <p className="text-xs text-cyan-300 font-bold mb-4 tracking-wider uppercase">{job.type}</p>
+                        <p className="text-sm text-slate-100 leading-relaxed max-w-md font-semibold">{job.description}</p>
                       </div>
-                      <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4">
-                        <span className="text-sm font-bold">{job.salary}</span>
-                        <Link href="/contact" className="text-xs font-bold text-cyan-400 flex items-center gap-1 hover:underline">
-                          Apply <ArrowRight className="w-3.5 h-3.5" />
+                      <div className="pt-6 border-t border-white/10 flex items-center justify-between">
+                        <span className="text-lg font-black text-white">{job.salary}</span>
+                        <Link href="/contact" className="text-sm font-black text-cyan-400 flex items-center gap-1 hover:underline">
+                          Apply Now <ArrowRight className="w-4 h-4" />
                         </Link>
                       </div>
                     </div>
                   </motion.div>
                 );
               })}
-            </AnimatePresence>
+            </div>
+
+            {/* Mobile Auto-Fade Spring Interval Transition Loop (Viewport <= 1024px) */}
+            <div className="lg:hidden relative w-full h-[520px] flex items-center justify-center overflow-hidden">
+              <AnimatePresence mode="wait">
+                {jobs.map((job, idx) => {
+                  if (idx !== activeCareerIdx) return null;
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                      style={{
+                        background: "rgba(255, 255, 255, 0.12)",
+                        backdropFilter: "blur(24px)",
+                        WebkitBackdropFilter: "blur(24px)",
+                        border: "1.5px solid rgba(255, 255, 255, 0.2)",
+                        willChange: "transform, opacity, backdrop-filter",
+                      }}
+                      className="absolute inset-0 flex flex-col p-6 rounded-3xl justify-between h-full transform-gpu"
+                    >
+                      <div className="w-full h-[200px] rounded-xl overflow-hidden bg-zinc-900 border border-white/5 mb-4 shrink-0">
+                        <img src={job.image} alt={job.title} className="w-full h-full object-cover object-center" />
+                      </div>
+                      <div className="text-white flex-grow flex flex-col justify-between">
+                        <div>
+                          <h3 className="text-xl font-bold mb-1">{job.title}</h3>
+                          <p className="text-xs text-cyan-300 font-semibold mb-3">{job.type}</p>
+                          <p className="text-xs text-slate-200 leading-relaxed line-clamp-3">{job.description}</p>
+                        </div>
+                        <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-4">
+                          <span className="text-sm font-bold">{job.salary}</span>
+                          <Link href="/contact" className="text-xs font-bold text-cyan-400 flex items-center gap-1 hover:underline">
+                            Apply <ArrowRight className="w-3.5 h-3.5" />
+                          </Link>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION E: High-Density Sweet Light Blue Recognition Marquee (Module 5) */}
+      {/* SECTION E: High-Density Sweet Light Blue Recognition Marquee (Module 3 Upscaled) */}
       <section className="py-20 bg-sky-50 border-t border-sky-100 overflow-hidden relative z-10">
         <div className="container mx-auto container-gutter mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-slate-900">Clinical Recognitions & Credentials</h2>
+          <h2 className="text-3xl sm:text-5xl font-bold tracking-widest text-center text-slate-900 font-serif uppercase">
+            Clinical Recognitions & Credentials
+          </h2>
         </div>
 
         {/* Seamless horizontal infinite loop marquee sliding from left to right */}
@@ -547,21 +556,22 @@ export default function AboutPage() {
               <div
                 key={idx}
                 style={{
-                  background: "rgba(255, 255, 255, 0.45)",
-                  backdropFilter: "blur(20px)",
-                  WebkitBackdropFilter: "blur(20px)",
-                  border: "1.5px solid rgba(14, 165, 233, 0.25)",
-                  borderRadius: "28px",
-                  boxShadow: "0 20px 40px rgba(14, 165, 233, 0.06)",
+                  background: "rgba(255, 255, 255, 0.5)",
+                  backdropFilter: "blur(28px)",
+                  WebkitBackdropFilter: "blur(28px)",
+                  border: "2px solid rgba(14, 165, 233, 0.3)",
+                  borderRadius: "24px",
+                  padding: "2.5rem",
+                  willChange: "transform, opacity, backdrop-filter"
                 }}
-                className="inline-flex items-center gap-8 p-8 rounded-[28px] min-w-[380px] sm:min-w-[480px] select-none pointer-events-none transform-gpu"
+                className="inline-flex items-center gap-12 rounded-[24px] min-w-[550px] sm:min-w-[650px] select-none pointer-events-none transform-gpu shadow-xl"
               >
-                <div className="w-24 h-24 rounded-2xl overflow-hidden shrink-0 border border-slate-200 bg-white">
+                <div className="w-32 h-32 rounded-2xl overflow-hidden shrink-0 border border-slate-200 bg-white">
                   <img src={cred.image} alt={cred.title} className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex flex-col text-left whitespace-normal">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 font-sans">{cred.title}</h3>
-                  <p className="text-sm text-slate-700 font-sans leading-relaxed">{cred.desc}</p>
+                  <h3 className="text-2xl font-black text-slate-900 mb-2 font-sans">{cred.title}</h3>
+                  <p className="text-base text-slate-700 font-sans leading-relaxed font-semibold">{cred.desc}</p>
                 </div>
               </div>
             ))}
