@@ -147,18 +147,18 @@ export default function ServicesPage() {
               y_hover: { type: "spring", stiffness: 350, damping: 22 }
             }}
             style={{
-              background: "rgba(9, 29, 54, 0.88)",
-              backdropFilter: "blur(30px)",
-              WebkitBackdropFilter: "blur(30px)",
-              border: "2px solid rgba(255, 255, 255, 0.2)",
+              background: "rgba(255, 255, 255, 0.22)",
+              backdropFilter: "blur(45px)",
+              WebkitBackdropFilter: "blur(45px)",
+              border: "2px solid rgba(255, 255, 255, 0.4)",
               borderRadius: "24px",
               padding: "3rem",
-              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.4)",
+              boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.25)",
               willChange: "transform, opacity, backdrop-filter"
             }}
             className="max-w-4xl text-white transform-gpu"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-xs font-semibold tracking-wide uppercase text-white mb-6 backdrop-blur-md">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/25 text-xs font-semibold tracking-wide uppercase text-white mb-6 backdrop-blur-md">
               Our Services
             </span>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 drop-shadow-lg">
@@ -173,8 +173,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Quick Info Bar (Module 2 Widget Trio Re-Theming & Tinted Glass Upscaling) */}
-      <section className="py-16 relative z-10 bg-transparent text-white">
+      {/* Quick Info Bar (Module 2 Widget Trio Re-Theming & Tinted Glass Upscaling & Contrast fix) */}
+      <section className="py-16 relative z-10 bg-transparent">
         <div className="container mx-auto container-gutter max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -214,22 +214,23 @@ export default function ServicesPage() {
                   y_hover: { type: "spring", stiffness: 350, damping: 22 }
                 }}
                 style={{
-                  background: "rgba(20, 184, 166, 0.12)",
-                  backdropFilter: "blur(24px)",
-                  WebkitBackdropFilter: "blur(24px)",
-                  border: "2px solid rgba(45, 212, 191, 0.3)",
+                  background: "rgba(255, 255, 255, 0.22)",
+                  backdropFilter: "blur(45px)",
+                  WebkitBackdropFilter: "blur(45px)",
+                  border: "2px solid rgba(255, 255, 255, 0.4)",
                   borderRadius: "20px",
                   padding: "2.5rem",
+                  boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.25)",
                   willChange: "transform, opacity, backdrop-filter"
                 }}
                 className="flex items-center gap-6 rounded-2xl transform-gpu shadow-xl"
               >
-                <div className="w-16 h-16 rounded-xl bg-teal-500/20 flex items-center justify-center shrink-0 border border-teal-300/30">
-                  <item.icon className="w-8 h-8 text-teal-300" />
+                <div className="w-16 h-16 rounded-xl bg-zinc-900/10 flex items-center justify-center shrink-0 border border-zinc-950/20">
+                  <item.icon className="w-8 h-8 text-[#0f172a]" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-xl text-white mb-1">{item.title}</h3>
-                  <p className="text-sm text-zinc-100 font-semibold">
+                  <h3 style={{ color: "#0f172a" }} className="font-black text-xl mb-1">{item.title}</h3>
+                  <p style={{ color: "#1e3a8a" }} className="text-sm font-bold">
                     {item.description}
                   </p>
                 </div>
@@ -257,7 +258,7 @@ export default function ServicesPage() {
                 const y = useTransform(
                   scrollYProgress,
                   [0, startProgress, p1, p2, p3],
-                  ["80vh", "80vh", "0px", "0px", "-20px"]
+                  ["100vh", "100vh", "0px", "0px", "-20px"]
                 );
 
                 const t1 = Math.max(0, startProgress - 0.05);
@@ -284,12 +285,13 @@ export default function ServicesPage() {
                       y,
                       scale,
                       opacity,
-                      background: "rgba(245, 250, 255, 0.08)",
-                      backdropFilter: "blur(24px)",
-                      WebkitBackdropFilter: "blur(24px)",
-                      border: "1px solid rgba(200, 230, 255, 0.16)",
+                      background: "rgba(255, 255, 255, 0.22)",
+                      backdropFilter: "blur(45px)",
+                      WebkitBackdropFilter: "blur(45px)",
+                      border: "2px solid rgba(255, 255, 255, 0.4)",
                       borderRadius: "24px",
                       padding: "3rem",
+                      boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.25)",
                       zIndex: index + 1,
                       willChange: "transform, opacity, backdrop-filter"
                     }}
@@ -297,21 +299,21 @@ export default function ServicesPage() {
                   >
                     <div className="flex flex-col space-y-6 flex-grow text-white">
                       <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 flex items-center justify-center">
-                          <service.icon className="w-7 h-7 text-cyan-300" />
+                        <div className="w-14 h-14 rounded-2xl bg-cyan-500/25 flex items-center justify-center border border-white/20 shadow-sm">
+                          <service.icon className="w-7 h-7 text-cyan-200" />
                         </div>
-                        <h2 className="text-2xl lg:text-3xl font-extrabold tracking-tight text-white">
+                        <h2 className="text-2xl lg:text-3xl font-black tracking-tight text-white drop-shadow-sm">
                           {service.title}
                         </h2>
                       </div>
-                      <p className="text-base text-white leading-relaxed max-w-xl font-extrabold">
+                      <p className="text-base text-white leading-relaxed max-w-xl font-extrabold drop-shadow-sm">
                         {service.description}
                       </p>
                       <div className="grid grid-cols-2 gap-3 pt-2">
                         {service.features.map((feature) => (
                           <div key={feature} className="flex items-center gap-3">
-                            <CheckCircle2 className="w-4 h-4 text-cyan-300 shrink-0" />
-                            <span className="text-white text-sm font-bold">{feature}</span>
+                            <CheckCircle2 className="w-4 h-4 text-cyan-200 shrink-0" />
+                            <span className="text-white text-sm font-extrabold">{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -338,15 +340,15 @@ export default function ServicesPage() {
                 return (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, scale: 0.96 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.96 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      background: "rgba(245, 250, 255, 0.08)",
-                      backdropFilter: "blur(24px)",
-                      WebkitBackdropFilter: "blur(24px)",
-                      border: "1px solid rgba(200, 230, 255, 0.16)",
+                      background: "rgba(255, 255, 255, 0.22)",
+                      backdropFilter: "blur(45px)",
+                      WebkitBackdropFilter: "blur(45px)",
+                      border: "2px solid rgba(255, 255, 255, 0.4)",
                       borderRadius: "24px",
                       padding: "2rem",
                       willChange: "transform, opacity, backdrop-filter",
@@ -355,8 +357,8 @@ export default function ServicesPage() {
                   >
                     <div className="flex flex-col space-y-4 text-white flex-grow">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center shrink-0">
-                          <service.icon className="w-6 h-6 text-cyan-300" />
+                        <div className="w-12 h-12 rounded-xl bg-cyan-500/25 flex items-center justify-center shrink-0 border border-white/20">
+                          <service.icon className="w-6 h-6 text-cyan-200" />
                         </div>
                         <h2 className="text-xl font-extrabold tracking-tight leading-tight">
                           {service.title}
@@ -368,7 +370,7 @@ export default function ServicesPage() {
                       <div className="grid grid-cols-1 gap-2 pt-2">
                         {service.features.slice(0, 4).map((feature) => (
                           <div key={feature} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-cyan-300 shrink-0" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-cyan-200 shrink-0" />
                             <span className="text-white text-xs font-bold">{feature}</span>
                           </div>
                         ))}
