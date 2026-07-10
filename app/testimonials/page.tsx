@@ -86,41 +86,54 @@ export default function TestimonialsPage() {
     <main className="min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative hero-padding overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
-        <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-gradient-to-br from-accent/10 to-transparent rounded-full blur-3xl -translate-y-1/2" />
-
-        <div className="container mx-auto container-gutter relative">
-          <div className="max-w-4xl">
-            <motion.span
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-xs font-medium tracking-wide uppercase text-primary mb-6"
-            >
+      {/* Hero Section (Biophilic backdrop & smoky white glass wrapper) */}
+      <section 
+        className="relative pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-28 overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.25), rgba(9, 25, 44, 0.25)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632655/Biophilic_dental_clinic_interior__2K_202607100259_ml5l2w.jpg')"
+        }}
+      >
+        <div className="container mx-auto container-gutter relative text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ y: [0, -6, 0] }}
+            whileHover={{ scale: 1.015, y: -6 }}
+            transition={{
+              y: {
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              },
+              scale: { type: "spring", stiffness: 350, damping: 22 },
+              y_hover: { type: "spring", stiffness: 350, damping: 22 }
+            }}
+            style={{
+              background: "rgba(255, 255, 255, 0.22)",
+              backdropFilter: "blur(45px)",
+              WebkitBackdropFilter: "blur(45px)",
+              border: "2px solid rgba(255, 255, 255, 0.4)",
+              borderRadius: "24px",
+              padding: "3rem",
+              maxWidth: "48rem",
+              margin: "0 auto",
+              boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.2)",
+              willChange: "transform, opacity, backdrop-filter"
+            }}
+            className="transform-gpu text-center flex flex-col items-center justify-center text-white"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-xs font-black tracking-wide uppercase text-white mb-6 backdrop-blur-md">
               Testimonials
-            </motion.span>
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-5 sm:mb-6"
-            >
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-5 sm:mb-6 drop-shadow-sm">
               What Our Patients
               <br />
-              <span className="text-gradient">Say About Us</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
-            >
+              Say About Us
+            </h1>
+            <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-black drop-shadow-sm">
               Real stories from real patients. Discover why thousands of
               professionals trust Bethany Dental Care for their elite oral healthcare needs.
-            </motion.p>
-          </div>
+            </p>
+          </motion.div>
         </div>
       </section>
 
