@@ -45,16 +45,23 @@ export const softFade: Variants = {
 };
 
 export const subtleHoverLift = {
-  y: -4,
-  scale: 1.01,
-  transition: revealTransitionFast,
+  scale: 1.025,
+  y: -10,
+  borderColor: "rgba(14, 165, 233, 0.45)",
+  boxShadow: "0 25px 50px rgba(14, 165, 233, 0.12)",
+  transition: {
+    type: "spring",
+    stiffness: 350,
+    damping: 22
+  }
 };
 
-export const ambientFloat = {
-  y: [0, -8, 0],
+export const ambientFloat = (index = 0) => ({
+  y: [0, -6, 0],
   transition: {
-    duration: 8,
+    duration: 4.5 + (index * 0.3),
     repeat: Infinity,
     ease: "easeInOut",
+    delay: index * 0.25,
   },
-};
+});

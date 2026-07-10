@@ -148,8 +148,27 @@ export default function AboutPage() {
         <div className="container mx-auto container-gutter relative z-10 flex flex-col items-center justify-center text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              y: [0, -6, 0]
+            }}
+            whileHover={{
+              scale: 1.025,
+              y: -10,
+              borderColor: "rgba(14, 165, 233, 0.45)",
+              boxShadow: "0 25px 50px rgba(14, 165, 233, 0.12)"
+            }}
+            transition={{
+              y: {
+                duration: 4.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0
+              },
+              scale: { type: "spring", stiffness: 350, damping: 22 },
+              y_hover: { type: "spring", stiffness: 350, damping: 22 }
+            }}
             style={{
               background: "linear-gradient(135deg, rgba(240, 244, 250, 0.18), rgba(255, 255, 255, 0.08))",
               backdropFilter: "blur(40px)",
@@ -185,7 +204,24 @@ export default function AboutPage() {
         }}
       >
         <div className="container mx-auto container-gutter max-w-4xl text-center">
-          <div 
+          <motion.div 
+            animate={{ y: [0, -6, 0] }}
+            whileHover={{
+              scale: 1.025,
+              y: -10,
+              borderColor: "rgba(14, 165, 233, 0.45)",
+              boxShadow: "0 25px 50px rgba(14, 165, 233, 0.12)"
+            }}
+            transition={{
+              y: {
+                duration: 4.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.25
+              },
+              scale: { type: "spring", stiffness: 350, damping: 22 },
+              y_hover: { type: "spring", stiffness: 350, damping: 22 }
+            }}
             style={{
               background: "linear-gradient(135deg, rgba(240, 244, 250, 0.18), rgba(255, 255, 255, 0.08))",
               backdropFilter: "blur(40px)",
@@ -205,7 +241,7 @@ export default function AboutPage() {
             <p>
               Under the clinical leadership of Dr. Sarah Bethany, our team has pioneered the use of preventative bio-telemetry, enabling us to diagnose and address tooth wear and occlusal friction points before they result in pain or structural failure. We believe in high-efficiency, evidence-based treatments administered in premium sterile suites.
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
