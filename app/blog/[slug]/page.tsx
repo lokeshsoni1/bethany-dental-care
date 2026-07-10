@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { BookOpen, Clock, ChevronDown, ChevronUp, CheckCircle, ArrowLeft } from "lucide-react";
+import React from "react";
+import { useParams } from "next/navigation";
+import { BookOpen, Clock, ArrowLeft, CheckCircle } from "lucide-react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import Link from "next/link";
@@ -105,86 +105,87 @@ Furthermore, bio-telemetry mapping is invaluable for patients receiving restorat
   }
 ];
 
-export default function BlogPage() {
+export default function BlogPostDetail() {
+  const { slug } = useParams();
+  const article = articles.find((a) => a.slug === slug) || articles[0];
+
   return (
     <main className="min-h-screen bg-[#09192c] text-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative pt-36 pb-12 overflow-hidden bg-transparent">
-        <div className="container mx-auto container-gutter relative">
-          <div className="max-w-4xl">
-            <Link href="/" className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 mb-6 transition-colors">
-              <ArrowLeft className="w-4 h-4" /> Back to Home
-            </Link>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6">
-              Bethany Medical
-              <br />
-              <span className="text-cyan-200">Journal & Blog</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-slate-200 max-w-2xl leading-relaxed font-bold">
-              Explore scientific articles and diagnostic methodologies curated by Dr. Sarah Bethany. 
-              High-value insights into advanced endodontics, smile design, and bio-telemetry.
-            </p>
+      <section className="relative pt-36 pb-24 px-6 md:px-12 max-w-6xl mx-auto z-10">
+        <Link href="/blog" className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 mb-8 transition-colors">
+          <ArrowLeft className="w-4 h-4" /> Back to Journal
+        </Link>
+
+        {/* Horizontal Mesh Architecture Card */}
+        <div 
+          style={{
+            background: "rgba(255, 255, 255, 0.07)",
+            backdropFilter: "blur(30px)",
+            WebkitBackdropFilter: "blur(30px)",
+            border: "1px solid rgba(255, 255, 255, 0.18)",
+            borderRadius: "28px",
+            boxShadow: "0 30px 60px rgba(0,0,0,0.3)"
+          }}
+          className="flex flex-col lg:flex-row items-stretch overflow-hidden w-full gap-8 p-8 md:p-12 mb-12"
+        >
+          {/* Left Column: Heading, Meta information on a frosted silver backplate */}
+          <div 
+            style={{
+              background: "rgba(240, 244, 250, 0.12)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              borderRadius: "20px"
+            }}
+            className="w-full lg:w-2/5 p-8 flex flex-col justify-between"
+          >
+            <div>
+              <span className="px-3.5 py-1.5 rounded-full bg-cyan-500/20 text-xs font-extrabold text-cyan-300 uppercase tracking-wide inline-block mb-6">
+                {article.category}
+              </span>
+              <h1 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-6">
+                {article.title}
+              </h1>
+            </div>
+            <div className="flex items-center gap-3 text-sm text-slate-300 font-semibold">
+              <Clock className="w-4 h-4 text-cyan-400" />
+              <span>{article.readTime}</span>
+            </div>
+          </div>
+
+          {/* Right Column: Editorial image & intro */}
+          <div className="w-full lg:w-3/5 overflow-hidden rounded-2xl relative min-h-[300px]">
+            <img 
+              src={article.images[0]} 
+              alt={article.title} 
+              className="w-full h-full object-cover object-center rounded-2xl"
+            />
           </div>
         </div>
-      </section>
 
-      {/* Articles List */}
-      <section className="py-16 bg-transparent relative z-10">
-        <div className="container mx-auto container-gutter max-w-4xl">
-          <div className="space-y-8">
-            {articles.map((article) => {
-              return (
-                <div 
-                  key={article.id}
-                  style={{
-                    background: "rgba(255, 255, 255, 0.07)",
-                    backdropFilter: "blur(20px)",
-                    WebkitBackdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255, 255, 255, 0.18)",
-                    borderRadius: "28px",
-                    boxShadow: "0 30px 60px rgba(0,0,0,0.3)"
-                  }}
-                  className="p-8 flex flex-col md:flex-row items-center justify-between gap-8 transform-gpu shadow-2xl backdrop-blur-xl"
-                >
-                  <div className="w-full md:w-1/3 aspect-video md:aspect-[4/3] rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0">
+        {/* Article Body Content with Inline Editorial Images */}
+        <div className="max-w-4xl mx-auto space-y-8 text-slate-200 text-lg leading-relaxed font-medium">
+          {article.content.split("\n\n").map((paragraph, i) => {
+            const hasImage = i > 0 && i < article.images.length;
+            return (
+              <div key={i} className="space-y-8">
+                <p className="first-letter:text-5xl first-letter:font-black first-letter:text-cyan-400 first-letter:mr-3 first-letter:float-left first-letter:leading-none">
+                  {paragraph}
+                </p>
+                {hasImage && (
+                  <div className="w-full h-[400px] rounded-2xl overflow-hidden bg-zinc-950 border border-white/10 my-8">
                     <img 
-                      src={article.images[0]} 
-                      alt={article.title} 
-                      className="w-full h-full object-cover object-center rounded-xl"
+                      src={article.images[i]} 
+                      alt={`Illustration ${i}`} 
+                      className="w-full h-full object-cover object-center"
                     />
                   </div>
-                  <div className="flex flex-col space-y-4 flex-grow text-white">
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="px-3.5 py-1.5 rounded-full bg-cyan-500/20 text-xs font-extrabold text-cyan-300 uppercase tracking-wide">
-                        {article.category}
-                      </span>
-                      <span className="flex items-center gap-1.5 text-xs text-slate-300 font-semibold">
-                        <Clock className="w-3.5 h-3.5" />
-                        {article.readTime}
-                      </span>
-                    </div>
-
-                    <h2 className="text-2xl font-extrabold text-white leading-snug">
-                      {article.title}
-                    </h2>
-
-                    <p className="text-sm text-slate-200 leading-relaxed font-semibold line-clamp-3">
-                      {article.content}
-                    </p>
-
-                    <Link 
-                      href={`/blog/${article.slug}`}
-                      className="inline-flex items-center gap-2 text-sm font-extrabold text-cyan-400 hover:text-cyan-300 transition-colors"
-                    >
-                      Read Full Article <BookOpen className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
