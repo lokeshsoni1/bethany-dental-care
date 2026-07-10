@@ -156,17 +156,24 @@ export default function ServicesPage() {
               boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.25)",
               willChange: "transform, opacity, backdrop-filter"
             }}
-            className="max-w-4xl text-white transform-gpu"
+            className="max-w-4xl transform-gpu"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/25 text-xs font-semibold tracking-wide uppercase text-white mb-6 backdrop-blur-md">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#0f172a]/10 text-xs font-black tracking-wide uppercase text-[#0f172a] mb-6 backdrop-blur-md">
               Our Services
             </span>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 drop-shadow-lg">
-              Specialized
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-6 drop-shadow-sm">
+              <span style={{
+                background: "linear-gradient(to right, #0f766e, #1d4ed8)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                fontWeight: 900
+              }}>
+                Specialized
+              </span>
               <br />
-              <span className="text-cyan-200">Dental Services</span>
+              <span className="text-[#0f172a]">Dental Services</span>
             </h1>
-            <p className="text-lg sm:text-2xl text-white max-w-3xl leading-relaxed mx-auto font-extrabold drop-shadow-md">
+            <p className="text-lg sm:text-2xl text-[#0f172a] max-w-3xl leading-relaxed mx-auto font-semibold">
               From custom smile redesigns to high-precision implant diagnostics, we offer cutting-edge dental mapping inside NYC.
             </p>
           </motion.div>
@@ -240,156 +247,80 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services List - Stacking Parallax & Interval Engine (Module 3) */}
-      <div ref={containerRef} className="relative w-full overflow-visible">
-        
-        {/* Desktop Stacking Parallax view (> 1024px Viewports) */}
-        <section className="hidden lg:block relative w-full min-h-[400vh] bg-transparent">
-          <div className="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-            <div className="max-w-5xl w-full relative h-[600px] flex items-center justify-center px-8 z-10">
-              {services.map((service, index) => {
-                const startProgress = index * 0.18;
-                const endProgress = startProgress + 0.18;
-
-                const p1 = Math.min(startProgress + 0.08, 0.9);
-                const p2 = Math.min(endProgress, 0.95);
-                const p3 = Math.min(endProgress + 0.08, 1.0);
-
-                const y = useTransform(
-                  scrollYProgress,
-                  [0, startProgress, p1, p2, p3],
-                  ["100vh", "100vh", "0px", "0px", "-20px"]
-                );
-
-                const t1 = Math.max(0, startProgress - 0.05);
-                const t2 = startProgress;
-                const t3 = Math.min(startProgress + 0.08, 0.9);
-                const t4 = Math.min(endProgress, 0.95);
-                const t5 = Math.min(endProgress + 0.05, 1.0);
-
-                const scale = useTransform(
-                  scrollYProgress,
-                  [0, t1, t2, t3, t4, t5],
-                  [0.95, 0.95, 1.0, 1.0, 0.94, 0.94]
-                );
-                const opacity = useTransform(
-                  scrollYProgress,
-                  [0, t1, t2, t3, t4, t5],
-                  [0, 0, 1, 1, 0.6, 0.6]
-                );
-
-                return (
-                  <motion.div
-                    key={service.title}
-                    style={{
-                      y,
-                      scale,
-                      opacity,
-                      background: "rgba(255, 255, 255, 0.22)",
-                      backdropFilter: "blur(45px)",
-                      WebkitBackdropFilter: "blur(45px)",
-                      border: "2px solid rgba(255, 255, 255, 0.4)",
-                      borderRadius: "24px",
-                      padding: "3rem",
-                      boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.25)",
-                      zIndex: index + 1,
-                      willChange: "transform, opacity, backdrop-filter"
-                    }}
-                    className="absolute w-full flex flex-row items-center justify-between gap-12 transform-gpu shadow-2xl"
-                  >
-                    <div className="flex flex-col space-y-6 flex-grow text-white">
-                      <div className="flex items-center gap-4">
-                        <div className="w-14 h-14 rounded-2xl bg-cyan-500/25 flex items-center justify-center border border-white/20 shadow-sm">
-                          <service.icon className="w-7 h-7 text-cyan-200" />
+      {/* Services List - Cyber-Glass Grid Layout (Module 3 Reset) */}
+      <div className="relative w-full overflow-visible py-16">
+        <div className="container mx-auto container-gutter max-w-5xl">
+          <div className="space-y-12">
+            {services.map((service, index) => {
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  animate={{ y: [0, -6, 0] }}
+                  whileHover={{ 
+                    scale: 1.025, 
+                    y: -8, 
+                    borderColor: "rgba(6, 182, 212, 0.8)", 
+                    boxShadow: "0 20px 40px rgba(6, 182, 212, 0.25)" 
+                  }}
+                  transition={{
+                    y: {
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: index * 0.3
+                    },
+                    scale: { type: "spring", stiffness: 350, damping: 22 },
+                    y_hover: { type: "spring", stiffness: 350, damping: 22 }
+                  }}
+                  style={{
+                    background: "rgba(224, 242, 254, 0.94)",
+                    backdropFilter: "blur(20px)",
+                    WebkitBackdropFilter: "blur(20px)",
+                    border: "2px solid rgba(14, 165, 233, 0.4)",
+                    borderRadius: "24px",
+                    padding: "3rem",
+                    boxShadow: "0 0 25px rgba(6, 182, 212, 0.15)",
+                    willChange: "transform, opacity, backdrop-filter"
+                  }}
+                  className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-8 transform-gpu"
+                >
+                  <div className="flex flex-col space-y-6 flex-grow text-slate-900">
+                    <div className="flex items-center gap-4">
+                      <div className="w-14 h-14 rounded-2xl bg-sky-500/20 flex items-center justify-center border border-sky-500/30 shadow-sm shrink-0">
+                        <service.icon className="w-7 h-7 text-sky-700" />
+                      </div>
+                      <h2 className="text-2xl lg:text-3xl font-black tracking-tight text-slate-900">
+                        {service.title}
+                      </h2>
+                    </div>
+                    <p className="text-base text-slate-800 leading-relaxed max-w-xl font-extrabold">
+                      {service.description}
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                      {service.features.map((feature) => (
+                        <div key={feature} className="flex items-center gap-3">
+                          <CheckCircle2 className="w-4 h-4 text-sky-600 shrink-0" />
+                          <span className="text-slate-900 text-sm font-black">{feature}</span>
                         </div>
-                        <h2 className="text-2xl lg:text-3xl font-black tracking-tight text-white drop-shadow-sm">
-                          {service.title}
-                        </h2>
-                      </div>
-                      <p className="text-base text-white leading-relaxed max-w-xl font-extrabold drop-shadow-sm">
-                        {service.description}
-                      </p>
-                      <div className="grid grid-cols-2 gap-3 pt-2">
-                        {service.features.map((feature) => (
-                          <div key={feature} className="flex items-center gap-3">
-                            <CheckCircle2 className="w-4 h-4 text-cyan-200 shrink-0" />
-                            <span className="text-white text-sm font-extrabold">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <Button asChild size="lg" className="w-fit bg-cyan-500 hover:bg-cyan-600 text-black font-bold h-12 rounded-xl mt-4">
-                        <Link href="/book-appointment">
-                          Book Service
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
+                      ))}
                     </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+                  </div>
+                  <div className="w-full md:w-auto shrink-0 self-stretch md:self-auto flex items-end">
+                    <Button asChild size="lg" className="w-full md:w-fit bg-sky-600 hover:bg-sky-700 text-white font-bold h-12 rounded-xl">
+                      <Link href="/book-appointment">
+                        Book Service
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Link>
+                    </Button>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
-        </section>
-
-        {/* Mobile Zoom-Pop Sequence Engine (Viewport <= 1024px) */}
-        <section className="lg:hidden py-16 px-4 relative z-10">
-          <div className="w-[94vw] mx-auto h-[480px] relative flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              {services.map((service, index) => {
-                if (index !== activeMobileIdx) return null;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                    style={{
-                      background: "rgba(255, 255, 255, 0.22)",
-                      backdropFilter: "blur(45px)",
-                      WebkitBackdropFilter: "blur(45px)",
-                      border: "2px solid rgba(255, 255, 255, 0.4)",
-                      borderRadius: "24px",
-                      padding: "2rem",
-                      willChange: "transform, opacity, backdrop-filter",
-                    }}
-                    className="absolute inset-0 flex flex-col justify-between h-full transform-gpu shadow-2xl"
-                  >
-                    <div className="flex flex-col space-y-4 text-white flex-grow">
-                      <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-cyan-500/25 flex items-center justify-center shrink-0 border border-white/20">
-                          <service.icon className="w-6 h-6 text-cyan-200" />
-                        </div>
-                        <h2 className="text-xl font-extrabold tracking-tight leading-tight">
-                          {service.title}
-                        </h2>
-                      </div>
-                      <p className="text-xs text-white leading-relaxed line-clamp-4 font-bold">
-                        {service.description}
-                      </p>
-                      <div className="grid grid-cols-1 gap-2 pt-2">
-                        {service.features.slice(0, 4).map((feature) => (
-                          <div key={feature} className="flex items-center gap-2">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-cyan-200 shrink-0" />
-                            <span className="text-white text-xs font-bold">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="pt-4 border-t border-white/10 mt-4">
-                      <Button asChild size="lg" className="w-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold h-12 rounded-xl">
-                        <Link href="/book-appointment">
-                          Book Now
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </AnimatePresence>
-          </div>
-        </section>
+        </div>
       </div>
 
       {/* CTA Section (Module 4 Bottom Service CTA Upgrade & Button Synchronization) */}
