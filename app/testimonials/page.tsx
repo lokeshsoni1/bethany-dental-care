@@ -88,12 +88,12 @@ export default function TestimonialsPage() {
 
       {/* Hero Section (Biophilic backdrop & smoky white glass wrapper) */}
       <section 
-        className="relative z-10 pt-36 pb-20 sm:pt-40 sm:pb-24 lg:pt-48 lg:pb-28 bg-cover bg-center"
+        className="relative w-full min-h-[60vh] md:min-h-[70vh] flex items-center justify-center px-4 py-20 overflow-visible z-10 bg-cover bg-center"
         style={{
           backgroundImage: "linear-gradient(rgba(9, 25, 44, 0.25), rgba(9, 25, 44, 0.25)), url('https://res.cloudinary.com/dbpdexty8/image/upload/v1783632655/Biophilic_dental_clinic_interior__2K_202607100259_ml5l2w.jpg')"
         }}
       >
-        <div className="container mx-auto container-gutter relative text-center z-10">
+        <div className="container mx-auto container-gutter relative text-center z-10 overflow-visible">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ y: [0, -6, 0] }}
@@ -104,30 +104,19 @@ export default function TestimonialsPage() {
                 repeat: Infinity,
                 ease: "easeInOut"
               },
-              scale: { type: "spring", stiffness: 350, damping: 22 },
-              y_hover: { type: "spring", stiffness: 350, damping: 22 }
+              scale: { type: "spring", stiffness: 260, damping: 25 }
             }}
-            style={{
-              background: "rgba(255, 255, 255, 0.25)",
-              backdropFilter: "blur(45px)",
-              WebkitBackdropFilter: "blur(45px)",
-              border: "2px solid rgba(255, 255, 255, 0.4)",
-              borderRadius: "24px",
-              padding: "3rem",
-              boxShadow: "0 35px 70px -15px rgba(9, 29, 54, 0.2)",
-              willChange: "transform, opacity, backdrop-filter"
-            }}
-            className="relative z-50 mx-auto max-w-4xl rounded-3xl border-2 border-white/40 bg-white/25 px-6 py-12 text-center shadow-2xl backdrop-blur-[45px] transform-gpu flex flex-col items-center justify-center text-white"
+            className="relative z-50 w-full max-w-4xl mx-auto rounded-3xl bg-white/20 border-2 border-white/40 p-8 md:p-12 text-center shadow-[0_30px_60px_rgba(0,0,0,0.25)] backdrop-blur-[40px] -webkit-backdrop-filter: blur(40px) transform-gpu flex flex-col items-center justify-center text-white"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-white/20 text-xs font-black tracking-wide uppercase text-white mb-6 backdrop-blur-md">
+            <span className="text-sm font-black tracking-[0.25em] text-cyan-200 uppercase block mb-4">
               Testimonials
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white mb-5 sm:mb-6 drop-shadow-sm">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
               What Our Patients
               <br />
               Say About Us
             </h1>
-            <p className="text-base sm:text-lg text-slate-100 leading-relaxed font-black drop-shadow-sm">
+            <p className="text-base md:text-lg font-medium text-white/95 max-w-2xl mx-auto leading-relaxed">
               Real stories from real patients. Discover why thousands of
               professionals trust Bethany Dental Care for their elite oral healthcare needs.
             </p>
